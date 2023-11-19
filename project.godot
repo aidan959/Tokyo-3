@@ -14,3 +14,22 @@ config/name="EvangelionCity"
 run/main_scene="res://evangelion_city.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[shader_globals]
+
+specular_smoothness={
+"type": "float",
+"value": 0.089
+}
+fresnel_smoothness={
+"type": "float",
+"value": 0.283
+}
+outline_width={
+"type": "float",
+"value": 6.0
+}
+outline_color={
+"type": "color",
+"value": Color(0, 0, 0, 1)
+}

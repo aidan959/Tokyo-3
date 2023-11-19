@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvnwgot2oxmv8"]
+[gd_scene load_steps=21 format=3 uid="uid://cvnwgot2oxmv8"]
 
 [ext_resource type="Shader" path="res://evangelion_city.gdshader" id="1_wo0c3"]
+[ext_resource type="Material" uid="uid://3at5cu5syn5p" path="res://cel_shading/cel_shader_material.tres" id="2_4fkyd"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ywna2"]
 seed = 2
@@ -69,14 +70,15 @@ shader_parameter/stars_texture = SubResource("NoiseTexture2D_i0xap")
 
 [sub_resource type="Sky" id="Sky_vmj54"]
 sky_material = SubResource("ShaderMaterial_ya80i")
-radiance_size = 6
 
 [sub_resource type="Environment" id="Environment_qfelq"]
 background_mode = 2
 background_energy_multiplier = 3.3
 sky = SubResource("Sky_vmj54")
+sky_rotation = Vector3(0, 3.04909, 0)
 ambient_light_source = 3
-ambient_light_energy = 1.16
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 2.41
 reflected_light_source = 2
 ssao_radius = 16.0
 fog_light_color = Color(0.72549, 0.498039, 0.156863, 1)
@@ -93,6 +95,20 @@ volumetric_fog_detail_spread = 6.0
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_0c0xr"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tnt83"]
+bounce = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mgh0s"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ckufu"]
+material = ExtResource("2_4fkyd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j6ef2"]
+material = ExtResource("2_4fkyd")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xuswy"]
+size = Vector3(1.95223, 0.0318898, 1.96852)
+
 [node name="EvangelionCity" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -102,5 +118,35 @@ process_thread_messages = 0
 environment = SubResource("Environment_qfelq")
 camera_attributes = SubResource("CameraAttributesPhysical_0c0xr")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.937506, 0.242031, -0.250009, -0.229369, 0.970124, 0.0790573, 0.261674, -0.0167723, 0.965011, 0, 0, 0)
+light_color = Color(0.737255, 0.313726, 0.203922, 1)
+shadow_enabled = true
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00480318, 0.466214, -4.11676)
+fov = 85.0
+near = 0.095
+
+[node name="meshes" type="Node" parent="."]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="meshes"]
+physics_material_override = SubResource("PhysicsMaterial_tnt83")
+gravity_scale = -128.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/RigidBody3D"]
+shape = SubResource("SphereShape3D_mgh0s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="meshes/RigidBody3D"]
+mesh = SubResource("SphereMesh_ckufu")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.875861, 0)
+mesh = SubResource("PlaneMesh_j6ef2")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="meshes/MeshInstance3D2"]
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/MeshInstance3D2/RigidBody3D"]
+shape = SubResource("BoxShape3D_xuswy")
