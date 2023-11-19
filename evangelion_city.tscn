@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cvnwgot2oxmv8"]
 
 [ext_resource type="Shader" path="res://evangelion_city.gdshader" id="1_wo0c3"]
-[ext_resource type="ArrayMesh" uid="uid://dko5sn7yv15fq" path="res://models/obj/Residential Buildings 001.obj" id="2_wgtlb"]
+[ext_resource type="PackedScene" uid="uid://c1g04vgp4mt4u" path="res://cityscape.tscn" id="2_kwety"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ywna2"]
 seed = 2
@@ -106,8 +106,5 @@ camera_attributes = SubResource("CameraAttributesPhysical_0c0xr")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-
-[node name="ResidentialBuildings001" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.8531, 125.154, -607.968)
-mesh = ExtResource("2_wgtlb")
+[node name="city" parent="." instance=ExtResource("2_kwety")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.74977, 0.554565, 42.7157)
