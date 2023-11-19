@@ -54,8 +54,8 @@ shader_parameter/sun_col = Color(0.658824, 0.243137, 0.0980392, 1)
 shader_parameter/sun_size = 0.076
 shader_parameter/sun_blur = 0.01
 shader_parameter/moon_col = Color(1, 1, 1, 1)
-shader_parameter/moon_size = 0.15
-shader_parameter/moon_crescent_offset = -0.1
+shader_parameter/moon_size = 0.01
+shader_parameter/moon_crescent_offset = 0.475
 shader_parameter/clouds_main_color = Color(1, 1, 1, 1)
 shader_parameter/clouds_edge_color = Color(1, 1, 1, 1)
 shader_parameter/clouds_speed = 0.03
@@ -122,6 +122,8 @@ camera_attributes = SubResource("CameraAttributesPhysical_0c0xr")
 transform = Transform3D(0.937506, 0.242031, -0.250009, -0.229369, 0.970124, 0.0790573, 0.261674, -0.0167723, 0.965011, 0, 0, 0)
 light_color = Color(0.737255, 0.313726, 0.203922, 1)
 shadow_enabled = true
+shadow_bias = 0.009
+shadow_blur = 0.25
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00480318, 0.466214, -4.11676)
@@ -131,8 +133,8 @@ near = 0.095
 [node name="meshes" type="Node" parent="."]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.414385, 0)
 physics_material_override = SubResource("PhysicsMaterial_tnt83")
-gravity_scale = -128.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/RigidBody3D"]
 shape = SubResource("SphereShape3D_mgh0s")

@@ -15,6 +15,14 @@ run/main_scene="res://evangelion_city.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
+
 [shader_globals]
 
 specular_smoothness={
