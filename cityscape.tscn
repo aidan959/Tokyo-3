@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://c1g04vgp4mt4u"]
+
+[ext_resource type="ArrayMesh" uid="uid://dko5sn7yv15fq" path="res://models/obj/Residential Buildings 001.obj" id="1_nofig"]
+[ext_resource type="ArrayMesh" uid="uid://b5eaqyxqsicfg" path="res://models/obj/Residential Buildings 002.obj" id="2_5iqbf"]
+[ext_resource type="ArrayMesh" uid="uid://dtyg8cit7ulbq" path="res://models/obj/Residential Buildings 003.obj" id="3_dr3ar"]
+[ext_resource type="ArrayMesh" uid="uid://dp2xqclutlcrv" path="res://models/obj/Residential Buildings 004.obj" id="4_swe7a"]
+[ext_resource type="ArrayMesh" uid="uid://d286111echofv" path="res://models/obj/Residential Buildings 005.obj" id="5_0lwjp"]
+[ext_resource type="ArrayMesh" uid="uid://cvql023tu5vvc" path="res://models/obj/Residential Buildings 006.obj" id="6_idvna"]
+[ext_resource type="ArrayMesh" uid="uid://bvsfuj45ipn3r" path="res://models/obj/Residential Buildings 007.obj" id="7_b8bwd"]
+[ext_resource type="ArrayMesh" uid="uid://bfonvci21up6h" path="res://models/obj/Residential Buildings 008.obj" id="8_rae52"]
+[ext_resource type="ArrayMesh" uid="uid://b1f0gqksistmi" path="res://models/obj/Residential Buildings 009.obj" id="9_46exl"]
+[ext_resource type="ArrayMesh" uid="uid://dhs7sacqbg5qr" path="res://models/obj/Residential Buildings 010.obj" id="10_kcj4u"]
+
+[node name="city" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21746, 4.21554, -4.0957)
+mesh = ExtResource("1_nofig")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings002" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.673, 12.6286, 15.9578)
+mesh = ExtResource("2_5iqbf")
+
+[node name="ResidentialBuildings003" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1509, 20.2996, -44.5615)
+mesh = ExtResource("3_dr3ar")
+
+[node name="ResidentialBuildings004" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.4311, 59.2073, -83.1321)
+mesh = ExtResource("4_swe7a")
+
+[node name="ResidentialBuildings005" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.6897, 86.7868, -86.7901)
+mesh = ExtResource("5_0lwjp")
+
+[node name="ResidentialBuildings006" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.4955, 89.9893, -75.0968)
+mesh = ExtResource("6_idvna")
+
+[node name="ResidentialBuildings007" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.152, 103.921, -178.37)
+mesh = ExtResource("7_b8bwd")
+
+[node name="ResidentialBuildings008" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0702, 141.621, -140.85)
+mesh = ExtResource("8_rae52")
+
+[node name="ResidentialBuildings009" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.879, 148.791, -140.433)
+mesh = ExtResource("9_46exl")
+
+[node name="ResidentialBuildings010" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.7253, 182.885, -149.512)
+mesh = ExtResource("10_kcj4u")

@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 [gd_scene load_steps=21 format=3 uid="uid://cvnwgot2oxmv8"]
 
 [ext_resource type="Shader" path="res://evangelion_city.gdshader" id="1_wo0c3"]
 [ext_resource type="Material" uid="uid://3at5cu5syn5p" path="res://cel_shading/cel_shader_material.tres" id="2_4fkyd"]
+=======
+[gd_scene load_steps=16 format=3 uid="uid://cvnwgot2oxmv8"]
+
+[ext_resource type="Shader" path="res://evangelion_city.gdshader" id="1_wo0c3"]
+[ext_resource type="PackedScene" uid="uid://c1g04vgp4mt4u" path="res://cityscape.tscn" id="2_kwety"]
+>>>>>>> origin/buildings
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ywna2"]
 seed = 2
@@ -126,6 +133,7 @@ shadow_bias = 0.009
 shadow_blur = 0.25
 
 [node name="Camera3D" type="Camera3D" parent="."]
+<<<<<<< HEAD
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00480318, 0.466214, -4.11676)
 fov = 85.0
 near = 0.095
@@ -152,3 +160,9 @@ freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/MeshInstance3D2/RigidBody3D"]
 shape = SubResource("BoxShape3D_xuswy")
+=======
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+
+[node name="city" parent="." instance=ExtResource("2_kwety")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.74977, 0.554565, 42.7157)
+>>>>>>> origin/buildings

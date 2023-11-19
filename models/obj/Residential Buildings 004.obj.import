@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dp2xqclutlcrv"
+path="res://.godot/imported/Residential Buildings 004.obj-2dd73ece8d2115c686d0c2b1ab36f4eb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Residential Buildings 004.obj-2dd73ece8d2115c686d0c2b1ab36f4eb.mesh"]
+
+source_file="res://models/obj/Residential Buildings 004.obj"
+dest_files=["res://.godot/imported/Residential Buildings 004.obj-2dd73ece8d2115c686d0c2b1ab36f4eb.mesh", "res://.godot/imported/Residential Buildings 004.obj-2dd73ece8d2115c686d0c2b1ab36f4eb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
