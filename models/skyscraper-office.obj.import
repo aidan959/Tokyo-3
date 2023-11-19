@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bw5b17dg5ys8x"
+path="res://.godot/imported/skyscraper-office.obj-9ff459bb7c148ed5ff4b04b8fb7d0e35.mesh"
+
+[deps]
+
+files=["res://.godot/imported/skyscraper-office.obj-9ff459bb7c148ed5ff4b04b8fb7d0e35.mesh"]
+
+source_file="res://models/skyscraper-office.obj"
+dest_files=["res://.godot/imported/skyscraper-office.obj-9ff459bb7c148ed5ff4b04b8fb7d0e35.mesh", "res://.godot/imported/skyscraper-office.obj-9ff459bb7c148ed5ff4b04b8fb7d0e35.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
