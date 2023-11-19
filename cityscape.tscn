@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1g04vgp4mt4u"]
+[gd_scene load_steps=14 format=3 uid="uid://c1g04vgp4mt4u"]
 
 [ext_resource type="ArrayMesh" uid="uid://dko5sn7yv15fq" path="res://models/obj/Residential Buildings 001.obj" id="1_nofig"]
 [ext_resource type="ArrayMesh" uid="uid://b5eaqyxqsicfg" path="res://models/obj/Residential Buildings 002.obj" id="2_5iqbf"]
@@ -10,6 +10,13 @@
 [ext_resource type="ArrayMesh" uid="uid://bfonvci21up6h" path="res://models/obj/Residential Buildings 008.obj" id="8_rae52"]
 [ext_resource type="ArrayMesh" uid="uid://b1f0gqksistmi" path="res://models/obj/Residential Buildings 009.obj" id="9_46exl"]
 [ext_resource type="ArrayMesh" uid="uid://dhs7sacqbg5qr" path="res://models/obj/Residential Buildings 010.obj" id="10_kcj4u"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="11_oyxpl"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="12_py02h"]
+
+[sub_resource type="Resource" id="Resource_5167i"]
+script = ExtResource("12_py02h")
+mode = 0
+textures = [[], []]
 
 [node name="city" type="Node3D"]
 
@@ -53,3 +60,29 @@ mesh = ExtResource("9_46exl")
 [node name="ResidentialBuildings010" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.7253, 182.885, -149.512)
 mesh = ExtResource("10_kcj4u")
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("11_oyxpl")
+_terrain_data = null
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_5167i")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale_per_texture = Vector4(20, 20, 20, 20)
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = false
+shader_params/u_tile_reduction = Vector4(0, 0, 0, 0)
+shader_params/u_globalmap_blend_start = null
+shader_params/u_globalmap_blend_distance = null
+shader_params/u_colormap_opacity_per_texture = Vector4(1, 1, 1, 1)
+shader_params/u_specular = 0.5
+
+[node name="ResidentialBuildings001" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.388, 0, 2.21108)
+mesh = ExtResource("1_nofig")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cvnwgot2oxmv8"]
 
 [ext_resource type="Shader" path="res://evangelion_city.gdshader" id="1_wo0c3"]
-[ext_resource type="PackedScene" uid="uid://c1g04vgp4mt4u" path="res://cityscape.tscn" id="2_kwety"]
+[ext_resource type="PackedScene" uid="uid://c1g04vgp4mt4u" path="res://cityscape.tscn" id="2_do8sp"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ywna2"]
 seed = 2
@@ -95,20 +95,6 @@ volumetric_fog_detail_spread = 6.0
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_0c0xr"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tnt83"]
-bounce = 1.0
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_mgh0s"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_ckufu"]
-material = ExtResource("2_4fkyd")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_j6ef2"]
-material = ExtResource("2_4fkyd")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xuswy"]
-size = Vector3(1.95223, 0.0318898, 1.96852)
-
 [node name="EvangelionCity" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -130,29 +116,5 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.004
 fov = 85.0
 near = 0.095
 
-[node name="meshes" type="Node" parent="."]
-
-[node name="RigidBody3D" type="RigidBody3D" parent="meshes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.414385, 0)
-physics_material_override = SubResource("PhysicsMaterial_tnt83")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/RigidBody3D"]
-shape = SubResource("SphereShape3D_mgh0s")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="meshes/RigidBody3D"]
-mesh = SubResource("SphereMesh_ckufu")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="meshes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.875861, 0)
-mesh = SubResource("PlaneMesh_j6ef2")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="meshes/MeshInstance3D2"]
-freeze = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="meshes/MeshInstance3D2/RigidBody3D"]
-shape = SubResource("BoxShape3D_xuswy")
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
-
-[node name="city" parent="." instance=ExtResource("2_kwety")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.74977, 0.554565, 42.7157)
+[node name="city" parent="." instance=ExtResource("2_do8sp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.067639, 0, -1.2389)
