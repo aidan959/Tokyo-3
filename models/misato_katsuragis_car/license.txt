@@ -1,0 +1,11 @@
+Model Information:
+* title:	Misato Katsuragi's car
+* source:	https://sketchfab.com/3d-models/misato-katsuragis-car-f1946f7e1cf1456086c9a1a63f9f4f84
+* author:	ArtEast (https://sketchfab.com/ArtEast)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Misato Katsuragi's car" (https://sketchfab.com/3d-models/misato-katsuragis-car-f1946f7e1cf1456086c9a1a63f9f4f84) by ArtEast (https://sketchfab.com/ArtEast) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

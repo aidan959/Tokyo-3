@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3wbsniylcqky"]
+
+[ext_resource type="PackedScene" uid="uid://b30b01jhrwvek" path="res://models/misato_katsuragis_car/scene.gltf" id="1_yvg8g"]
+[ext_resource type="Texture2D" uid="uid://dpwni1xe1x73b" path="res://models/obj/textures/Grass_col.JPG" id="2_ban30"]
+[ext_resource type="Material" uid="uid://b7p1bb6yqweg8" path="res://cel_shading/cel_shader_material_building_08.tres" id="3_28em8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hk6fd"]
+next_pass = ExtResource("3_28em8")
+albedo_color = Color(0.301961, 0.4, 0.729412, 1)
+metallic = 1.0
+metallic_specular = 0.35
+metallic_texture = ExtResource("2_ban30")
+metallic_texture_channel = 1
+
+[node name="MisatoCar" instance=ExtResource("1_yvg8g")]
+
+[node name="Sedan_BaseColor_0" parent="Sketchfab_model/cad598b0773640d9b193e8f15be02fcd_fbx/RootNode/Sedan" index="0"]
+material_override = SubResource("StandardMaterial3D_hk6fd")

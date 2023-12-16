@@ -1,88 +1,109 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1g04vgp4mt4u"]
+[gd_scene load_steps=22 format=3 uid="uid://c1g04vgp4mt4u"]
 
-[ext_resource type="ArrayMesh" uid="uid://dko5sn7yv15fq" path="res://models/obj/Residential Buildings 001.obj" id="1_nofig"]
 [ext_resource type="ArrayMesh" uid="uid://b5eaqyxqsicfg" path="res://models/obj/Residential Buildings 002.obj" id="2_5iqbf"]
+[ext_resource type="Resource" path="res://evangelion_terrain/data.hterrain" id="2_dcl8b"]
 [ext_resource type="ArrayMesh" uid="uid://dtyg8cit7ulbq" path="res://models/obj/Residential Buildings 003.obj" id="3_dr3ar"]
 [ext_resource type="ArrayMesh" uid="uid://dp2xqclutlcrv" path="res://models/obj/Residential Buildings 004.obj" id="4_swe7a"]
 [ext_resource type="ArrayMesh" uid="uid://d286111echofv" path="res://models/obj/Residential Buildings 005.obj" id="5_0lwjp"]
+[ext_resource type="Texture2D" uid="uid://cnwrl7s3uf6r6" path="res://cityscape_slot2_albedo_bump.png" id="6_2q7vv"]
 [ext_resource type="ArrayMesh" uid="uid://cvql023tu5vvc" path="res://models/obj/Residential Buildings 006.obj" id="6_idvna"]
-[ext_resource type="ArrayMesh" uid="uid://bvsfuj45ipn3r" path="res://models/obj/Residential Buildings 007.obj" id="7_b8bwd"]
 [ext_resource type="ArrayMesh" uid="uid://bfonvci21up6h" path="res://models/obj/Residential Buildings 008.obj" id="8_rae52"]
 [ext_resource type="ArrayMesh" uid="uid://b1f0gqksistmi" path="res://models/obj/Residential Buildings 009.obj" id="9_46exl"]
+[ext_resource type="Texture2D" uid="uid://du2kklkpa6nfc" path="res://cityscape_slot2_normal_roughness.png" id="9_n0i2y"]
 [ext_resource type="ArrayMesh" uid="uid://dhs7sacqbg5qr" path="res://models/obj/Residential Buildings 010.obj" id="10_kcj4u"]
+[ext_resource type="Material" uid="uid://b7p1bb6yqweg8" path="res://cel_shading/cel_shader_material_building_08.tres" id="11_kp7ie"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="11_oyxpl"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="12_py02h"]
+[ext_resource type="Texture2D" uid="uid://bc5tbhxgqq13x" path="res://cityscape_slot0_albedo_bump.png" id="14_1jcxs"]
+[ext_resource type="Texture2D" uid="uid://cov7ofvke4ms" path="res://cityscape_slot1_albedo_bump.png" id="15_0wfhw"]
+[ext_resource type="Texture2D" uid="uid://2gmww31c4l3p" path="res://cityscape_slot0_normal_roughness.png" id="16_xsgkd"]
+[ext_resource type="Texture2D" uid="uid://dmbrufoe7ronc" path="res://cityscape_slot1_normal_roughness.png" id="17_iikaf"]
+[ext_resource type="PackedScene" uid="uid://d3wbsniylcqky" path="res://misato_car.tscn" id="18_k4wup"]
+[ext_resource type="PackedScene" uid="uid://7gxt3qcrhp3v" path="res://roads/road_01.tscn" id="19_8ibl1"]
 
 [sub_resource type="Resource" id="Resource_5167i"]
 script = ExtResource("12_py02h")
 mode = 0
-textures = [[], []]
+textures = [[ExtResource("14_1jcxs"), ExtResource("15_0wfhw"), ExtResource("6_2q7vv")], [ExtResource("16_xsgkd"), ExtResource("17_iikaf"), ExtResource("9_n0i2y")]]
 
 [node name="city" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21746, 4.21554, -4.0957)
-mesh = ExtResource("1_nofig")
-skeleton = NodePath("../..")
-
-[node name="ResidentialBuildings002" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.673, 12.6286, 15.9578)
-mesh = ExtResource("2_5iqbf")
-
-[node name="ResidentialBuildings003" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1509, 20.2996, -44.5615)
-mesh = ExtResource("3_dr3ar")
-
-[node name="ResidentialBuildings004" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.4311, 59.2073, -83.1321)
-mesh = ExtResource("4_swe7a")
-
-[node name="ResidentialBuildings005" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.6897, 86.7868, -86.7901)
-mesh = ExtResource("5_0lwjp")
-
-[node name="ResidentialBuildings006" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.4955, 89.9893, -75.0968)
-mesh = ExtResource("6_idvna")
-
-[node name="ResidentialBuildings007" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.152, 103.921, -178.37)
-mesh = ExtResource("7_b8bwd")
-
-[node name="ResidentialBuildings008" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0702, 141.621, -140.85)
-mesh = ExtResource("8_rae52")
-
-[node name="ResidentialBuildings009" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.879, 148.791, -140.433)
-mesh = ExtResource("9_46exl")
-
-[node name="ResidentialBuildings010" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.7253, 182.885, -149.512)
-mesh = ExtResource("10_kcj4u")
-
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("11_oyxpl")
-_terrain_data = null
-chunk_size = 32
+ambient_wind = 0.01
+_terrain_data = ExtResource("2_dcl8b")
+chunk_size = 64
 collision_enabled = true
 collision_layer = 1
 collision_mask = 1
-shader_type = "Classic4"
+shader_type = "Classic4Lite"
 custom_shader = null
 custom_globalmap_shader = null
 texture_set = SubResource("Resource_5167i")
-render_layers = 1
+render_layers = 1048575
 cast_shadow = 1
-shader_params/u_ground_uv_scale_per_texture = Vector4(20, 20, 20, 20)
+shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = false
 shader_params/u_tile_reduction = Vector4(0, 0, 0, 0)
-shader_params/u_globalmap_blend_start = null
-shader_params/u_globalmap_blend_distance = null
-shader_params/u_colormap_opacity_per_texture = Vector4(1, 1, 1, 1)
 shader_params/u_specular = 0.5
 
-[node name="ResidentialBuildings001" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.388, 0, 2.21108)
-mesh = ExtResource("1_nofig")
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 448.424, -69.903, 578.903)
+
+[node name="ResidentialBuildings002" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -223.117, 179.333, -393.216)
+mesh = ExtResource("2_5iqbf")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("11_kp7ie")
+
+[node name="ResidentialBuildings003" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9447, 19.5813, -43.1533)
+mesh = ExtResource("3_dr3ar")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings004" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.4311, 68.5514, -83.1321)
+mesh = ExtResource("4_swe7a")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings005" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6392, 66.6158, -170.713)
+mesh = ExtResource("5_0lwjp")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings006" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.4955, 89.9893, -75.0968)
+mesh = ExtResource("6_idvna")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings008" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0702, 128.53, -140.85)
+mesh = ExtResource("8_rae52")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings009" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.35605, 105.187, -151.995)
+mesh = ExtResource("9_46exl")
+skeleton = NodePath("../..")
+
+[node name="as" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.7253, 51.7755, -149.512)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings008" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 330.853, 24.3725, 429.43)
+mesh = ExtResource("8_rae52")
+
+[node name="MisatoCar" parent="." instance=ExtResource("18_k4wup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.648, 101.928, 53.4555)
+
+[node name="Road_01" parent="." instance=ExtResource("19_8ibl1")]
+transform = Transform3D(-1.96701e-07, -4.5, -1.96701e-07, 0, -1.96701e-07, 4.5, -4.5, 1.96701e-07, 8.59807e-15, 132.864, 95.7545, 7.85014)
+
+[node name="Road_02" parent="." instance=ExtResource("19_8ibl1")]
+transform = Transform3D(-1.96701e-07, -4.5, -1.96701e-07, 0, -1.96701e-07, 4.5, -4.5, 1.96701e-07, 8.59807e-15, 132.904, 95.7545, 62.4765)
+
+[node name="Road_03" parent="." instance=ExtResource("19_8ibl1")]
+transform = Transform3D(-1.96701e-07, -4.5, -1.96701e-07, 0, -1.96701e-07, 4.5, -4.5, 1.96701e-07, 8.59807e-15, 132.904, 95.7545, 113.603)
