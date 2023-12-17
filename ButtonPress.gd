@@ -1,12 +1,25 @@
-extends AnimationPlayer
+extends Interactable
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+@onready var anim_player = $AnimationPlayer
+@onready var audio_player = $Clicky
+
+signal button_pressed
+
+# interactable
+func get_interaction_text():
+	return "to press"
+
+func interact():
+	# return if button is in mid animation
+	if anim_player.is_playing():
+		return
 	
-	pass # Replace with function body.
+	emit_signal("button_pressed", true)
+	
+	anim_player.play("Cylinder_001Action_001")
+	audio_player.play()
 
+func _on_AnimationPlayer_animation_finished(_anim_name):
+	emit_signal("button_pressed", false)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
