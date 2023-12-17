@@ -1,6 +1,5 @@
-[gd_scene load_steps=22 format=3 uid="uid://c1g04vgp4mt4u"]
+[gd_scene load_steps=21 format=3 uid="uid://c1g04vgp4mt4u"]
 
-[ext_resource type="ArrayMesh" uid="uid://b5eaqyxqsicfg" path="res://models/obj/Residential Buildings 002.obj" id="2_5iqbf"]
 [ext_resource type="Resource" path="res://evangelion_terrain/data.hterrain" id="2_dcl8b"]
 [ext_resource type="ArrayMesh" uid="uid://dtyg8cit7ulbq" path="res://models/obj/Residential Buildings 003.obj" id="3_dr3ar"]
 [ext_resource type="ArrayMesh" uid="uid://dp2xqclutlcrv" path="res://models/obj/Residential Buildings 004.obj" id="4_swe7a"]
@@ -11,7 +10,6 @@
 [ext_resource type="ArrayMesh" uid="uid://b1f0gqksistmi" path="res://models/obj/Residential Buildings 009.obj" id="9_46exl"]
 [ext_resource type="Texture2D" uid="uid://du2kklkpa6nfc" path="res://cityscape_slot2_normal_roughness.png" id="9_n0i2y"]
 [ext_resource type="ArrayMesh" uid="uid://dhs7sacqbg5qr" path="res://models/obj/Residential Buildings 010.obj" id="10_kcj4u"]
-[ext_resource type="Material" uid="uid://b7p1bb6yqweg8" path="res://cel_shading/cel_shader_material_building_08.tres" id="11_kp7ie"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="11_oyxpl"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="12_py02h"]
 [ext_resource type="Texture2D" uid="uid://bc5tbhxgqq13x" path="res://cityscape_slot0_albedo_bump.png" id="14_1jcxs"]
@@ -19,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://2gmww31c4l3p" path="res://cityscape_slot0_normal_roughness.png" id="16_xsgkd"]
 [ext_resource type="Texture2D" uid="uid://dmbrufoe7ronc" path="res://cityscape_slot1_normal_roughness.png" id="17_iikaf"]
 [ext_resource type="PackedScene" uid="uid://d3wbsniylcqky" path="res://misato_car.tscn" id="18_k4wup"]
+[ext_resource type="ArrayMesh" uid="uid://bvsfuj45ipn3r" path="res://models/obj/Residential Buildings 007.obj" id="19_ynqwt"]
 [ext_resource type="PackedScene" uid="uid://b1witx1w0gef8" path="res://Road.tscn" id="20_tb17q"]
 
 [sub_resource type="Resource" id="Resource_5167i"]
@@ -48,52 +47,56 @@ shader_params/u_triplanar = false
 shader_params/u_tile_reduction = Vector4(0, 0, 0, 0)
 shader_params/u_specular = 0.5
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="front-facing" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 448.424, -69.903, 578.903)
 
-[node name="ResidentialBuildings002" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -223.117, 179.333, -393.216)
-mesh = ExtResource("2_5iqbf")
-skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("11_kp7ie")
-
-[node name="ResidentialBuildings003" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9447, 19.5813, -43.1533)
+[node name="ResidentialBuildings003" type="MeshInstance3D" parent="front-facing"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -218.554, 122.886, -351.716)
 mesh = ExtResource("3_dr3ar")
 skeleton = NodePath("../..")
 
-[node name="ResidentialBuildings004" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.4311, 68.5514, -83.1321)
+[node name="ResidentialBuildings004" type="MeshInstance3D" parent="front-facing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189.785, 130.373, -358.881)
 mesh = ExtResource("4_swe7a")
 skeleton = NodePath("../..")
 
-[node name="ResidentialBuildings005" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6392, 66.6158, -170.713)
+[node name="ResidentialBuildings007" type="MeshInstance3D" parent="front-facing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -170.069, 129.145, -379.753)
+mesh = ExtResource("4_swe7a")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings005" type="MeshInstance3D" parent="front-facing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -211.687, 115.229, -307.953)
 mesh = ExtResource("5_0lwjp")
 skeleton = NodePath("../..")
 
-[node name="ResidentialBuildings006" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.4955, 89.9893, -75.0968)
+[node name="ResidentialBuildings006" type="MeshInstance3D" parent="front-facing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -186.076, 116.557, -211.255)
 mesh = ExtResource("6_idvna")
 skeleton = NodePath("../..")
 
-[node name="ResidentialBuildings008" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0702, 128.53, -140.85)
+[node name="ResidentialBuildings008" type="MeshInstance3D" parent="front-facing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.8413, 127.622, -150.613)
 mesh = ExtResource("8_rae52")
 skeleton = NodePath("../..")
 
-[node name="ResidentialBuildings009" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.35605, 105.187, -151.995)
+[node name="ResidentialBuildings009" type="MeshInstance3D" parent="front-facing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.35605, 96.2718, -151.995)
 mesh = ExtResource("9_46exl")
 skeleton = NodePath("../..")
 
-[node name="as" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.7253, 51.7755, -149.512)
+[node name="ResidentialBuildings010" type="MeshInstance3D" parent="front-facing"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -151.896, 138.246, -399.974)
+mesh = ExtResource("9_46exl")
+skeleton = NodePath("../..")
+
+[node name="as" type="MeshInstance3D" parent="front-facing"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -112.403, 108.498, -299.147)
 mesh = ExtResource("10_kcj4u")
 skeleton = NodePath("../..")
 
 [node name="ResidentialBuildings008" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 330.853, 24.3725, 429.43)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 330.853, 59.1359, 429.43)
 mesh = ExtResource("8_rae52")
 
 [node name="MisatoCar" parent="." instance=ExtResource("18_k4wup")]
@@ -112,13 +115,985 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 178.051, 99.7153, 135.593)
 
 [node name="Road5" parent="." instance=ExtResource("20_tb17q")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 175.051, 99.7153, 138.593)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 175.281, 99.7622, 138.669)
 
 [node name="Road6" parent="." instance=ExtResource("20_tb17q")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 172.051, 99.7153, 141.593)
 
+[node name="Road8" parent="." instance=ExtResource("20_tb17q")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 190.051, 99.7157, 123.593)
+
 [node name="Road7" parent="." instance=ExtResource("20_tb17q")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 193.051, 99.7157, 120.593)
 
-[node name="Road8" parent="." instance=ExtResource("20_tb17q")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 190.051, 99.7157, 123.593)
+[node name="ResidentialBuildings006" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323.86, 75.1595, 186.234)
+mesh = ExtResource("6_idvna")
+
+[node name="ResidentialBuildings007" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 305.632, 39.4223, 430.213)
+mesh = ExtResource("19_ynqwt")
+
+[node name="ResidentialBuildings009" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.031, 57.4496, 372.914)
+mesh = ExtResource("8_rae52")
+
+[node name="ResidentialBuildings010" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 348.279, 58.8383, 371.31)
+mesh = ExtResource("9_46exl")
+
+[node name="ResidentialBuildings011" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 372.389, 56.9065, 377.095)
+mesh = ExtResource("10_kcj4u")
+
+[node name="bigger-skyscrapers-group2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 418.028, 16.6074, 333.555)
+
+[node name="highrise-5" type="Node3D" parent="bigger-skyscrapers-group2"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="highrise-6" type="Node3D" parent="bigger-skyscrapers-group2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="highrise-7" type="Node3D" parent="bigger-skyscrapers-group2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="bigger-skyscrapers-group2/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../..")
+
+[node name="bignsmall" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 315.051, 65.4405, 227.96)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="bignsmall"]
+mesh = ExtResource("6_idvna")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="bignsmall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9947, -0.0975113, -0.225006)
+mesh = ExtResource("19_ynqwt")
+skeleton = NodePath("../..")
+
+[node name="bignsmall2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 277.196, 55.4405, 229.61)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="bignsmall2"]
+mesh = ExtResource("6_idvna")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="bignsmall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9947, -0.0975113, -0.225006)
+mesh = ExtResource("19_ynqwt")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278, 45.2815, 265.134)
+mesh = ExtResource("19_ynqwt")
+
+[node name="apartment-block-1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 542.495, -11.399, 211.872)
+
+[node name="bigger-skyscrapers-group" type="Node3D" parent="apartment-block-1"]
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="bigger-skyscrapers-group3" type="Node3D" parent="apartment-block-1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.953, 2.75268, 81.954)
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group3"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group3/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="bigger-skyscrapers-group4" type="Node3D" parent="apartment-block-1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.529, 22.0237, 0.331207)
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group4"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group4/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="bigger-skyscrapers-group5" type="Node3D" parent="apartment-block-1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 83.0107, 2.75268, 87.954)
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group5"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-1/bigger-skyscrapers-group5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-1/bigger-skyscrapers-group5/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="apartment-block-2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 632.009, 33.9946, 347.43)
+
+[node name="bigger-skyscrapers-group" type="Node3D" parent="apartment-block-2"]
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="bigger-skyscrapers-group3" type="Node3D" parent="apartment-block-2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.953, 2.75268, 81.954)
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group3"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group3/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="bigger-skyscrapers-group4" type="Node3D" parent="apartment-block-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.529, 12.4689, 0.331207)
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group4"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group4/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="bigger-skyscrapers-group5" type="Node3D" parent="apartment-block-2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 83.0107, 2.75268, 87.954)
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group5"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-2/bigger-skyscrapers-group5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-2/bigger-skyscrapers-group5/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="apartment-block-3" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 760.543, 37.5611, 493.211)
+
+[node name="bigger-skyscrapers-group" type="Node3D" parent="apartment-block-3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.0026, 0)
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="bigger-skyscrapers-group3" type="Node3D" parent="apartment-block-3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.953, -29.3713, 81.954)
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group3"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group3/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="bigger-skyscrapers-group4" type="Node3D" parent="apartment-block-3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.529, -23.3308, 0.331238)
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group4"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group4/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="bigger-skyscrapers-group5" type="Node3D" parent="apartment-block-3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 83.0107, -12.1136, 87.954)
+
+[node name="highrise-5" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group5"]
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-5"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-6" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08905, -0.0739822, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-6"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="highrise-7" type="Node3D" parent="apartment-block-3/bigger-skyscrapers-group5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0891, -18.074, 0.44783)
+
+[node name="ResidentialBuildings012" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-7"]
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings013" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.0158)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings014" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.78112, 60)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="ResidentialBuildings015" type="MeshInstance3D" parent="apartment-block-3/bigger-skyscrapers-group5/highrise-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.649703, 96)
+mesh = ExtResource("10_kcj4u")
+skeleton = NodePath("../../../..")
+
+[node name="edge-buildings" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 579.491, -92.6708, -84.3446)
+
+[node name="ResidentialBuildings003" type="MeshInstance3D" parent="edge-buildings"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -163.708, 128.922, -401.183)
+mesh = ExtResource("3_dr3ar")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings004" type="MeshInstance3D" parent="edge-buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.602, 111.141, -375.262)
+mesh = ExtResource("4_swe7a")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings007" type="MeshInstance3D" parent="edge-buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.137, 108.118, -357.243)
+mesh = ExtResource("4_swe7a")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings005" type="MeshInstance3D" parent="edge-buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -186.508, 127.566, -400.926)
+mesh = ExtResource("5_0lwjp")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings006" type="MeshInstance3D" parent="edge-buildings"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -136.3, 105.62, -337.091)
+mesh = ExtResource("5_0lwjp")
+skeleton = NodePath("../..")
+
+[node name="ResidentialBuildings010" type="MeshInstance3D" parent="edge-buildings"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -139.393, 102.832, -312.984)
+mesh = ExtResource("9_46exl")
+skeleton = NodePath("../..")
