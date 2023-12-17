@@ -195,4 +195,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142053, 0)
 shape = SubResource("BoxShape3D_h68of")
 
 [node name="Clicky" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.110133, -0.993917, 0, 0.993917, 0.110133, 0, 0, 0)
 stream = ExtResource("2_ipxxj")
+emission_angle_enabled = true
