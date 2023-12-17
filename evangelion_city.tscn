@@ -143,7 +143,7 @@ shadow_blur = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6029, -13.0792, 44.3011)
 
 [node name="Player" parent="." instance=ExtResource("3_2pbcn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.688, 89.961, 109.137)
+transform = Transform3D(0.717336, 0, -0.696727, 0, 1, 0, 0.696727, 0, 0.717336, 215.699, 87.0421, 175.697)
 
 [node name="red_button" parent="." instance=ExtResource("4_ltm3w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 217.263, 87.4266, 173.573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 217.263, 88.0581, 173.573)
