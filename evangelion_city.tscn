@@ -1,7 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://cvnwgot2oxmv8"]
+[gd_scene load_steps=20 format=3 uid="uid://cvnwgot2oxmv8"]
 
 [ext_resource type="Shader" path="res://evangelion_city.gdshader" id="1_wo0c3"]
 [ext_resource type="PackedScene" uid="uid://c1g04vgp4mt4u" path="res://cityscape.tscn" id="2_do8sp"]
+[ext_resource type="PackedScene" uid="uid://bputshm5h6y8o" path="res://player.tscn" id="3_2pbcn"]
+[ext_resource type="PackedScene" uid="uid://el8d5nitvchw" path="res://red_button.tscn" id="4_ltm3w"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_dlk7w"]
 seed = -25
@@ -117,13 +119,6 @@ auto_exposure_enabled = true
 auto_exposure_scale = 0.55
 auto_exposure_speed = 3.79
 
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_6ej7o"]
-exposure_multiplier = 1.085
-auto_exposure_enabled = true
-auto_exposure_scale = 0.45
-frustum_focus_distance = 0.86
-frustum_focal_length = 14.1
-
 [node name="EvangelionCity" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -144,9 +139,11 @@ shadow_bias = 1.027
 shadow_normal_bias = 10.0
 shadow_blur = 0.0
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.770958, 0, -0.636886, 0, 1, 0, 0.636886, 0, -0.770958, 90.5938, 163.99, 65.4542)
-attributes = SubResource("CameraAttributesPhysical_6ej7o")
-
 [node name="city" parent="." instance=ExtResource("2_do8sp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6029, -13.0792, 44.3011)
+
+[node name="Player" parent="." instance=ExtResource("3_2pbcn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.688, 89.961, 109.137)
+
+[node name="red_button" parent="." instance=ExtResource("4_ltm3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 217.263, 87.4266, 173.573)

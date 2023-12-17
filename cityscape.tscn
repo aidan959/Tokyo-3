@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://2gmww31c4l3p" path="res://cityscape_slot0_normal_roughness.png" id="16_xsgkd"]
 [ext_resource type="Texture2D" uid="uid://dmbrufoe7ronc" path="res://cityscape_slot1_normal_roughness.png" id="17_iikaf"]
 [ext_resource type="PackedScene" uid="uid://d3wbsniylcqky" path="res://misato_car.tscn" id="18_k4wup"]
-[ext_resource type="PackedScene" uid="uid://7gxt3qcrhp3v" path="res://roads/road_01.tscn" id="19_8ibl1"]
+[ext_resource type="PackedScene" uid="uid://b1witx1w0gef8" path="res://Road.tscn" id="20_tb17q"]
 
 [sub_resource type="Resource" id="Resource_5167i"]
 script = ExtResource("12_py02h")
@@ -97,13 +97,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 330.853, 24.3725, 429.43)
 mesh = ExtResource("8_rae52")
 
 [node name="MisatoCar" parent="." instance=ExtResource("18_k4wup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.648, 101.928, 53.4555)
+transform = Transform3D(0.069457, 0, -0.0719425, 0, 0.1, 0, 0.0719425, 0, 0.069457, 177.744, 100.219, 139.001)
 
-[node name="Road_01" parent="." instance=ExtResource("19_8ibl1")]
-transform = Transform3D(-1.96701e-07, -4.5, -1.96701e-07, 0, -1.96701e-07, 4.5, -4.5, 1.96701e-07, 8.59807e-15, 132.864, 95.7545, 7.85014)
+[node name="Road1" parent="." instance=ExtResource("20_tb17q")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 187.051, 99.7153, 126.593)
 
-[node name="Road_02" parent="." instance=ExtResource("19_8ibl1")]
-transform = Transform3D(-1.96701e-07, -4.5, -1.96701e-07, 0, -1.96701e-07, 4.5, -4.5, 1.96701e-07, 8.59807e-15, 132.904, 95.7545, 62.4765)
+[node name="Road2" parent="." instance=ExtResource("20_tb17q")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 184.051, 99.7153, 129.593)
 
-[node name="Road_03" parent="." instance=ExtResource("19_8ibl1")]
-transform = Transform3D(-1.96701e-07, -4.5, -1.96701e-07, 0, -1.96701e-07, 4.5, -4.5, 1.96701e-07, 8.59807e-15, 132.904, 95.7545, 113.603)
+[node name="Road3" parent="." instance=ExtResource("20_tb17q")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 181.051, 99.7153, 132.593)
+
+[node name="Road4" parent="." instance=ExtResource("20_tb17q")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 178.051, 99.7153, 135.593)
+
+[node name="Road5" parent="." instance=ExtResource("20_tb17q")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 175.051, 99.7153, 138.593)
+
+[node name="Road6" parent="." instance=ExtResource("20_tb17q")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 172.051, 99.7153, 141.593)
+
+[node name="Road7" parent="." instance=ExtResource("20_tb17q")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 193.051, 99.7157, 120.593)
+
+[node name="Road8" parent="." instance=ExtResource("20_tb17q")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 190.051, 99.7157, 123.593)

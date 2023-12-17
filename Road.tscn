@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1witx1w0gef8"]
+
+[ext_resource type="PackedScene" uid="uid://7gxt3qcrhp3v" path="res://roads/road_01.tscn" id="1_5to7n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_grbam"]
+size = Vector3(4.24332, 9.74971, 0.201854)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kb32f"]
+size = Vector3(4.23734, 1.37113, 0.159248)
+
+[node name="Road1" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.77334, 0.250586, -4.56484)
+shape = SubResource("BoxShape3D_grbam")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.77334, 0.406261, -4.56484)
+shape = SubResource("BoxShape3D_kb32f")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.77334, 0.406261, -0.339383)
+shape = SubResource("BoxShape3D_kb32f")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.77334, 0.406261, -8.76054)
+shape = SubResource("BoxShape3D_kb32f")
+
+[node name="Road_01" parent="." instance=ExtResource("1_5to7n")]
+transform = Transform3D(0.35, 0, 0, 0, -1.5299e-08, 0.35, 0, -0.35, -1.5299e-08, 0, 0, 0)

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://el8d5nitvchw"]
+
+[ext_resource type="PackedScene" uid="uid://db7bf57b76gsa" path="res://models/red_button.glb" id="1_hp13h"]
+
+[node name="red_button" instance=ExtResource("1_hp13h")]
