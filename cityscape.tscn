@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c1g04vgp4mt4u"]
+[gd_scene load_steps=23 format=3 uid="uid://c1g04vgp4mt4u"]
 
 [ext_resource type="Resource" path="res://evangelion_terrain/data.hterrain" id="2_dcl8b"]
 [ext_resource type="ArrayMesh" uid="uid://dtyg8cit7ulbq" path="res://models/obj/Residential Buildings 003.obj" id="3_dr3ar"]
@@ -18,7 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://dmbrufoe7ronc" path="res://cityscape_slot1_normal_roughness.png" id="17_iikaf"]
 [ext_resource type="PackedScene" uid="uid://d3wbsniylcqky" path="res://misato_car.tscn" id="18_k4wup"]
 [ext_resource type="ArrayMesh" uid="uid://bvsfuj45ipn3r" path="res://models/obj/Residential Buildings 007.obj" id="19_ynqwt"]
+[ext_resource type="Material" uid="uid://3at5cu5syn5p" path="res://cel_shading/cel_shader_material.tres" id="20_i45yp"]
 [ext_resource type="PackedScene" uid="uid://b1witx1w0gef8" path="res://Road.tscn" id="20_tb17q"]
+[ext_resource type="PackedScene" uid="uid://x13f3v5suij8" path="res://evangelion_terrain/Shaders/Water.tscn" id="21_tdbu8"]
 
 [sub_resource type="Resource" id="Resource_5167i"]
 script = ExtResource("12_py02h")
@@ -1185,16 +1187,19 @@ transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 291.09, 
 [node name="ResidentialBuildings013" type="MeshInstance3D" parent="big-frontal-tower"]
 mesh = ExtResource("10_kcj4u")
 skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("20_i45yp")
 
 [node name="ResidentialBuildings014" type="MeshInstance3D" parent="big-frontal-tower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2131, 0, 0)
 mesh = ExtResource("10_kcj4u")
 skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("20_i45yp")
 
 [node name="ResidentialBuildings015" type="MeshInstance3D" parent="big-frontal-tower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2131, 0, 0)
 mesh = ExtResource("10_kcj4u")
 skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("20_i45yp")
 
 [node name="middle-filler-1" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 366.21, -33.9298, 849.043)
@@ -1445,3 +1450,6 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9947, -3.09751, -0.225037)
 mesh = ExtResource("19_ynqwt")
 skeleton = NodePath("../../..")
+
+[node name="Water" parent="." instance=ExtResource("21_tdbu8")]
+transform = Transform3D(196.097, 0, 0, 0, 0.998544, 0, 0, 0, 511.929, 224.41, 30.3091, 543.325)

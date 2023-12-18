@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://evangelion_city.gdshader" id="1_wo0c3"]
 [ext_resource type="PackedScene" uid="uid://c1g04vgp4mt4u" path="res://cityscape.tscn" id="2_do8sp"]
 [ext_resource type="PackedScene" uid="uid://bputshm5h6y8o" path="res://player.tscn" id="3_2pbcn"]
-[ext_resource type="PackedScene" uid="uid://el8d5nitvchw" path="res://red_button.tscn" id="4_ltm3w"]
+[ext_resource type="PackedScene" uid="uid://b35f5ajb0q82g" path="res://red_button.tscn" id="4_ltm3w"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_dlk7w"]
 seed = -25
@@ -140,10 +140,9 @@ shadow_normal_bias = 10.0
 shadow_blur = 0.0
 
 [node name="city" parent="." instance=ExtResource("2_do8sp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6029, -13.0792, 44.3011)
 
 [node name="Player" parent="." instance=ExtResource("3_2pbcn")]
-transform = Transform3D(0.717336, 0, -0.696727, 0, 1, 0, 0.696727, 0, 0.717336, 215.699, 87.0421, 175.697)
+transform = Transform3D(0.717336, 0, -0.696727, 0, 1, 0, 0.696727, 0, 0.717336, 167.951, 101.349, 143.01)
 
 [node name="red_button" parent="." instance=ExtResource("4_ltm3w")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 217.263, 88.0581, 173.573)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 169.411, 101.349, 142.309)
