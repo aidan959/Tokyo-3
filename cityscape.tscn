@@ -103,9 +103,13 @@ mesh = ExtResource("4_swe7a")
 skeleton = NodePath("../../..")
 
 [node name="ResidentialBuildings007" type="MeshInstance3D" parent="buildings/front-facing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -170.069, 129.145, -379.753)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.682, 97.953, -379.222)
 mesh = ExtResource("4_swe7a")
 skeleton = NodePath("../../..")
+script = ExtResource("20_dwmd5")
+target_height = 129.145
+start_height = 97.953
+rise_speed = 0.943
 
 [node name="ResidentialBuildings005" type="MeshInstance3D" parent="buildings/front-facing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -211.61, 77.1576, -307.59)
@@ -405,6 +409,8 @@ skeleton = NodePath("../../../..")
 
 [node name="bignsmall" type="Node3D" parent="buildings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 315.051, 65.4405, 227.96)
+script = ExtResource("20_dwmd5")
+target_height = 65.44
 
 [node name="ResidentialBuildings012" type="MeshInstance3D" parent="buildings/bignsmall"]
 mesh = ExtResource("6_idvna")
@@ -1772,9 +1778,13 @@ skeleton = NodePath("../../../..")
 [node name="random" type="Node3D" parent="buildings"]
 
 [node name="ResidentialBuildings006" type="MeshInstance3D" parent="buildings/random"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323.86, 75.1595, 186.234)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323.86, 26.992, 186.234)
 mesh = ExtResource("6_idvna")
 skeleton = NodePath("../../..")
+script = ExtResource("20_dwmd5")
+target_height = 75.16
+start_height = 26.992
+rise_speed = 1.288
 
 [node name="ResidentialBuildings014" type="MeshInstance3D" parent="buildings/random"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 370.841, 37.2253, 226.921)
@@ -1830,7 +1840,13 @@ transform = Transform3D(-1.597, 7.57103e-08, -0.573563, -1.61213e-07, -1, -3.529
 script = ExtResource("26_1elip")
 
 [node name="building_hatch3" parent="." instance=ExtResource("27_46jq0")]
-transform = Transform3D(-1.52512, 8.74228e-08, 0, -1.3333e-07, -1, 0, 0, 0, 1, 297, 73.5023, 179)
+transform = Transform3D(-1.35813, 8.50263e-08, 0, -1.18731e-07, -0.972587, 0, 0, 0, 0.960903, 298.011, 70.3768, 180.73)
+
+[node name="building_hatch4" parent="." instance=ExtResource("27_46jq0")]
+transform = Transform3D(0.999529, 0, 0, 0, -0.712138, 1.39766e-07, 0, -6.22571e-08, -1.59873, 274.3, 66.7152, 198.529)
+
+[node name="building_hatch5" parent="." instance=ExtResource("27_46jq0")]
+transform = Transform3D(0.901069, 0, 0, 0, -0.851821, 1.35598e-07, 0, -7.44686e-08, -1.55106, 323.167, 75.2103, 186.025)
 
 [connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings010" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/apartment-block-1/bigger-skyscrapers-group" method="raise_building"]
@@ -1843,3 +1859,5 @@ transform = Transform3D(-1.52512, 8.74228e-08, 0, -1.3333e-07, -1, 0, 0, 0, 1, 2
 [connection signal="button_pressed" from="red_button" to="building_hatch" method="open_hatch"]
 [connection signal="button_pressed" from="red_button" to="building_hatch2" method="open_hatch"]
 [connection signal="button_pressed" from="red_button" to="building_hatch3" method="open_hatch"]
+[connection signal="button_pressed" from="red_button" to="building_hatch4" method="open_hatch"]
+[connection signal="button_pressed" from="red_button" to="building_hatch5" method="open_hatch"]
