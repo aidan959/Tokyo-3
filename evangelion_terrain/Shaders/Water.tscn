@@ -3,8 +3,10 @@
 [ext_resource type="Material" uid="uid://b1r1x345ae0hw" path="res://evangelion_terrain/Shaders/Water.tres" id="1_kkvnb"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_eheak"]
-subdivide_width = 100
-subdivide_depth = 100
+uv2_padding = 8.3
+size = Vector2(200, 500)
+subdivide_width = 2000
+subdivide_depth = 2000
 orientation = 1
 
 [node name="Water" type="MeshInstance3D"]

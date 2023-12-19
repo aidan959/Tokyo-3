@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cseodal8kdtqn"]
+[gd_scene load_steps=5 format=3 uid="uid://cseodal8kdtqn"]
 
 [ext_resource type="PackedScene" uid="uid://dx8co6c5pw8yf" path="res://models/building_hatch.glb" id="1_jyise"]
+[ext_resource type="Script" path="res://models/HatchCode.gd" id="2_5ocmq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3cvb"]
 albedo_color = Color(0.411765, 0.411765, 0.411765, 1)
@@ -15,6 +16,8 @@ metallic_specular = 0.9
 roughness = 0.88
 
 [node name="building_hatch" instance=ExtResource("1_jyise")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+script = ExtResource("2_5ocmq")
 
 [node name="Cube_001" parent="." index="1"]
 material_override = SubResource("StandardMaterial3D_v3cvb")
