@@ -93,9 +93,12 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 448.424, -69.903, 578.903)
 
 [node name="ResidentialBuildings003" type="MeshInstance3D" parent="buildings/front-facing"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -218.554, 122.886, -351.716)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -218.554, 97.59, -351.716)
 mesh = ExtResource("3_dr3ar")
 skeleton = NodePath("../../..")
+script = ExtResource("20_dwmd5")
+target_height = 122.886
+start_height = 97.59
 
 [node name="ResidentialBuildings004" type="MeshInstance3D" parent="buildings/front-facing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189.785, 86.497, -358.881)
@@ -122,6 +125,7 @@ skeleton = NodePath("../../..")
 script = ExtResource("20_dwmd5")
 target_height = 115.229
 start_height = 77.158
+rise_speed = 0.897
 
 [node name="ResidentialBuildings006" type="MeshInstance3D" parent="buildings/front-facing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -194.395, 107.956, -245.629)
@@ -445,9 +449,11 @@ mesh = ExtResource("19_ynqwt")
 skeleton = NodePath("../../..")
 
 [node name="bignsmall3" type="Node3D" parent="buildings"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 262.132, 48.9196, 248.105)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 262.939, -17.906, 265.285)
 script = ExtResource("20_dwmd5")
-target_height = 48.92
+target_height = 53.79
+start_height = -17.906
+rise_speed = 3.784
 
 [node name="ResidentialBuildings012" type="MeshInstance3D" parent="buildings/bignsmall3"]
 mesh = ExtResource("6_idvna")
@@ -459,11 +465,13 @@ mesh = ExtResource("19_ynqwt")
 skeleton = NodePath("../../..")
 
 [node name="ResidentialBuildings012" type="MeshInstance3D" parent="buildings"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278, 45.2815, 265.134)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278, -19.1316, 265.134)
 mesh = ExtResource("19_ynqwt")
 skeleton = NodePath("../..")
 script = ExtResource("20_dwmd5")
 target_height = 45.282
+start_height = -19.132
+rise_speed = 1.938
 
 [node name="apartment-block-1" type="Node3D" parent="buildings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 542.495, -12, 211.872)
@@ -1872,12 +1880,20 @@ transform = Transform3D(0.853419, 0, 0, 0, -1, 1.31046e-07, 0, -8.74228e-08, -1.
 [node name="building_hatch8" parent="." instance=ExtResource("27_46jq0")]
 transform = Transform3D(1.62179, 0, 0, 0, -1, 1.29933e-07, 0, -8.74228e-08, -1.48627, 282.339, 58.0255, 229.325)
 
+[node name="building_hatch9" parent="." instance=ExtResource("27_46jq0")]
+transform = Transform3D(1.46712, 0, 0, 0, -1, 7.1387e-08, 0, -8.74228e-08, -0.816572, 229.436, 56.983, 227.996)
+
+[node name="building_hatch10" parent="." instance=ExtResource("27_46jq0")]
+transform = Transform3D(0.758389, 7.57104e-08, 1.45041, 6.4238e-22, -1, 1.46414e-07, 1.31357, -4.37114e-08, -0.837393, 267.401, 52.4682, 262.136)
+
+[connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings003" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings004" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings007" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings005" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings010" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/bignsmall" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/bignsmall2" method="raise_building"]
+[connection signal="button_pressed" from="red_button" to="buildings/bignsmall3" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/apartment-block-1/bigger-skyscrapers-group" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/apartment-block-1/bigger-skyscrapers-group3" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/apartment-block-1/bigger-skyscrapers-group4" method="raise_building"]
@@ -1893,3 +1909,5 @@ transform = Transform3D(1.62179, 0, 0, 0, -1, 1.29933e-07, 0, -8.74228e-08, -1.4
 [connection signal="button_pressed" from="red_button" to="building_hatch5" method="open_hatch"]
 [connection signal="button_pressed" from="red_button" to="building_hatch7" method="open_hatch"]
 [connection signal="button_pressed" from="red_button" to="building_hatch8" method="open_hatch"]
+[connection signal="button_pressed" from="red_button" to="building_hatch9" method="open_hatch"]
+[connection signal="button_pressed" from="red_button" to="building_hatch10" method="open_hatch"]
