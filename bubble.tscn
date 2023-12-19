@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://xqrocd2672kd"]
+
+[ext_resource type="Shader" path="res://bubble.gdshader" id="1_0b2d7"]
+[ext_resource type="Texture2D" uid="uid://dtcfy5j16hkkl" path="res://textures/render-taj-plasma.jpg" id="2_hh0ye"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h6swv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p88f6"]
+seamless = true
+noise = SubResource("FastNoiseLite_h6swv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_egdjh"]
+render_priority = 0
+shader = ExtResource("1_0b2d7")
+shader_parameter/time_scale = 0.039
+shader_parameter/roughness = 0.071
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_p88f6")
+shader_parameter/color = ExtResource("2_hh0ye")
+
+[sub_resource type="SphereMesh" id="SphereMesh_4s0f1"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_egdjh")
+mesh = SubResource("SphereMesh_4s0f1")
