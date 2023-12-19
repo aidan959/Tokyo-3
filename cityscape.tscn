@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c1g04vgp4mt4u"]
+[gd_scene load_steps=28 format=3 uid="uid://c1g04vgp4mt4u"]
 
 [ext_resource type="Resource" path="res://evangelion_terrain/data.hterrain" id="2_dcl8b"]
 [ext_resource type="ArrayMesh" uid="uid://dtyg8cit7ulbq" path="res://models/obj/Residential Buildings 003.obj" id="3_dr3ar"]
@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://b1witx1w0gef8" path="res://Road.tscn" id="20_tb17q"]
 [ext_resource type="PackedScene" uid="uid://x13f3v5suij8" path="res://evangelion_terrain/Shaders/Water.tscn" id="21_tdbu8"]
 [ext_resource type="PackedScene" uid="uid://b35f5ajb0q82g" path="res://red_button.tscn" id="22_8o5dy"]
-[ext_resource type="PackedScene" uid="uid://okbhajhj0lqo" path="res://models/staircase.glb" id="24_wfydd"]
 [ext_resource type="PackedScene" uid="uid://dx8co6c5pw8yf" path="res://models/building_hatch.glb" id="25_jlstp"]
 [ext_resource type="Script" path="res://models/HatchCode.gd" id="26_1elip"]
 [ext_resource type="PackedScene" uid="uid://cseodal8kdtqn" path="res://building_hatch.tscn" id="27_46jq0"]
@@ -87,9 +86,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.367, 28.1926, 543.325)
 
 [node name="red_button" parent="." instance=ExtResource("22_8o5dy")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 169.411, 101.349, 142.309)
-
-[node name="staircase" parent="." instance=ExtResource("24_wfydd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.877, 106.123, 128.313)
 
 [node name="buildings" type="Node3D" parent="."]
 
@@ -524,7 +520,7 @@ mesh = ExtResource("10_kcj4u")
 skeleton = NodePath("../../../../..")
 
 [node name="bigger-skyscrapers-group3" type="Node3D" parent="buildings/apartment-block-1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.953, -94.8814, 81.954)
+transform = Transform3D(-1, 0.000533043, 0.000275236, 0.000533012, 1, -0.000115044, -0.000275295, -0.000114903, -1, 31.953, -94.8814, 81.954)
 script = ExtResource("20_dwmd5")
 target_height = 2.753
 start_height = -94.881
@@ -1834,7 +1830,7 @@ transform = Transform3D(-1.597, 7.57103e-08, -0.573563, -1.61213e-07, -1, -3.529
 script = ExtResource("26_1elip")
 
 [node name="building_hatch3" parent="." instance=ExtResource("27_46jq0")]
-transform = Transform3D(1.52512, 0, 0, 0, 1, 0, 0, 0, 1, 297, 73.5023, 179)
+transform = Transform3D(-1.52512, 8.74228e-08, 0, -1.3333e-07, -1, 0, 0, 0, 1, 297, 73.5023, 179)
 
 [connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings010" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/apartment-block-1/bigger-skyscrapers-group" method="raise_building"]
