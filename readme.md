@@ -31,8 +31,13 @@ In the hit anime Evangelion, there is a futiristic city shown which sinks into t
 * Item 2
 
 # What I am most proud of in the assignment
+Aidan:
+Learned many new techniques in 3d modelling and how to do basic animation in Godot.
+
+
 
 # What I learned
+Learned many features of the godot engine
 
 # Proposal submitted earlier can go here:
 

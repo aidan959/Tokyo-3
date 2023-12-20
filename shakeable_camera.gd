@@ -16,16 +16,18 @@ var time := 0.0
 @onready var camera := $Camera3D as Camera3D
 @onready var initial_rotation := camera.rotation_degrees as Vector3
 
-func _ready():
-	pass
+func rotate_camera(y, x ):
+	camera.rotation.y -= y + deg_to_rad( max_x * get_shake_intensity() * get_noise_from_seed(0))
+	camera.rotation.x = x +  deg_to_rad(max_y * get_shake_intensity() * get_noise_from_seed(1))
+	#camera.rotation_degrees.z = ini max_z * get_shake_intensity() * get_noise_from_seed(2)
 
 func _process(delta):
 	time += delta
 	trauma = max(trauma - delta * trauma_reduction_rate, 0.0)
 	
-	camera.rotation_degrees.x = initial_rotation.x + max_x * get_shake_intensity() * get_noise_from_seed(0)
-	camera.rotation_degrees.y = initial_rotation.y + max_y * get_shake_intensity() * get_noise_from_seed(1)
-	camera.rotation_degrees.z = initial_rotation.z + max_z * get_shake_intensity() * get_noise_from_seed(2)
+	#camera.rotation_degrees.x = initial_rotation.x + max_x * get_shake_intensity() * get_noise_from_seed(0)
+	#camera.rotation_degrees.y = initial_rotation.y + max_y * get_shake_intensity() * get_noise_from_seed(1)
+	#camera.rotation_degrees.z = initial_rotation.z + max_z * get_shake_intensity() * get_noise_from_seed(2)
 
 func add_trauma(trauma_amount : float):
 	trauma = clamp(trauma + trauma_amount, 0.0, 1.0)

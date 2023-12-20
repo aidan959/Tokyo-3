@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c1g04vgp4mt4u"]
+[gd_scene load_steps=30 format=3 uid="uid://c1g04vgp4mt4u"]
 
 [ext_resource type="Resource" path="res://evangelion_terrain/data.hterrain" id="2_dcl8b"]
 [ext_resource type="ArrayMesh" uid="uid://dtyg8cit7ulbq" path="res://models/obj/Residential Buildings 003.obj" id="3_dr3ar"]
@@ -26,11 +26,14 @@
 [ext_resource type="PackedScene" uid="uid://dx8co6c5pw8yf" path="res://models/building_hatch.glb" id="25_jlstp"]
 [ext_resource type="Script" path="res://models/HatchCode.gd" id="26_1elip"]
 [ext_resource type="PackedScene" uid="uid://cseodal8kdtqn" path="res://building_hatch.tscn" id="27_46jq0"]
+[ext_resource type="PackedScene" uid="uid://cxriyrvotwndq" path="res://trauma_causer.tscn" id="27_htch3"]
 
 [sub_resource type="Resource" id="Resource_5167i"]
 script = ExtResource("12_py02h")
 mode = 0
 textures = [[ExtResource("14_1jcxs"), ExtResource("15_0wfhw"), ExtResource("6_2q7vv")], [ExtResource("16_xsgkd"), ExtResource("17_iikaf"), ExtResource("9_n0i2y")]]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6gx8u"]
 
 [node name="city" type="Node3D"]
 
@@ -1898,6 +1901,13 @@ transform = Transform3D(1.46712, 0, 0, 0, -1, 7.1387e-08, 0, -8.74228e-08, -0.81
 [node name="building_hatch10" parent="." instance=ExtResource("27_46jq0")]
 transform = Transform3D(0.758389, 7.57104e-08, 1.45041, 6.4238e-22, -1, 1.46414e-07, 1.31357, -4.37114e-08, -0.837393, 267.401, 52.4682, 262.136)
 
+[node name="trauma_causer" parent="." instance=ExtResource("27_htch3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.435, 99.6141, 142.315)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trauma_causer"]
+transform = Transform3D(154.37, 0, 0, 0, 154.37, 0, 0, 0, 154.37, 0, 0, 0)
+shape = SubResource("SphereShape3D_6gx8u")
+
 [connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings003" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings004" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings007" method="raise_building"]
@@ -1926,3 +1936,4 @@ transform = Transform3D(0.758389, 7.57104e-08, 1.45041, 6.4238e-22, -1, 1.46414e
 [connection signal="button_pressed" from="red_button" to="building_hatch8" method="open_hatch"]
 [connection signal="button_pressed" from="red_button" to="building_hatch9" method="open_hatch"]
 [connection signal="button_pressed" from="red_button" to="building_hatch10" method="open_hatch"]
+[connection signal="button_pressed" from="red_button" to="trauma_causer" method="cause_trauma"]
