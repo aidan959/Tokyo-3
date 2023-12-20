@@ -20,7 +20,6 @@ var grav_vel: Vector3
 var jump_vel: Vector3
 
 #@onready var camera: Camera3D = $Camera
-#@onready var camera: Area3D = $shakeable_camera
 @onready var camera := $shakeable_camera as Area3D
 
 func _ready() -> void:

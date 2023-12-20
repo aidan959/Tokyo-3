@@ -26,5 +26,5 @@ func set_interaction_text(text):
 		interaction_label.visible = false
 	else:
 		var interact_key = OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode)
-		interaction_label.text = "Press e %s" % [interact_key, text]
+		interaction_label.text = "Press e %s" % [text]
 		interaction_label.visible = true
