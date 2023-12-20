@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://b35f5ajb0q82g"]
+[gd_scene load_steps=16 format=3 uid="uid://dkeb80kcvnak2"]
 
-[ext_resource type="Script" path="res://ButtonPress.gd" id="1_m6bxd"]
+[ext_resource type="Script" path="res://scripts/ButtonPress.gd" id="1_fdy63"]
 [ext_resource type="AudioStream" uid="uid://f1i2yvks4gm6" path="res://audio/button_click.wav" id="2_ipxxj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fw105"]
@@ -168,7 +168,7 @@ _data = {
 size = Vector3(0.5, 0.3, 0.5)
 
 [node name="red_button" type="StaticBody3D"]
-script = ExtResource("1_m6bxd")
+script = ExtResource("1_fdy63")
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_h2qy5")

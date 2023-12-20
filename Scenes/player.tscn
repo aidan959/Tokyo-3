@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bputshm5h6y8o"]
+[gd_scene load_steps=5 format=3 uid="uid://chcj0ciqnj7ks"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_gq2n1"]
-[ext_resource type="PackedScene" uid="uid://7204o58wfpbw" path="res://shakeable_camera.tscn" id="2_3tydp"]
-[ext_resource type="Script" path="res://PlayerInteraction.gd" id="2_77p8a"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_hh15u"]
+[ext_resource type="PackedScene" uid="uid://7204o58wfpbw" path="res://Scenes/shakeable_camera.tscn" id="2_3tydp"]
+[ext_resource type="Script" path="res://scripts/PlayerInteraction.gd" id="3_o7wsp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8is3b"]
 size = Vector3(0.7, 1.8, 0.7)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
-script = ExtResource("1_gq2n1")
+script = ExtResource("1_hh15u")
 camera_sens = 0.6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="InteractionCast" type="RayCast3D" parent="shakeable_camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00181818, 1.19209e-07, -0.00735283)
 target_position = Vector3(0, 0, -1.5)
-script = ExtResource("2_77p8a")
+script = ExtResource("3_o7wsp")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

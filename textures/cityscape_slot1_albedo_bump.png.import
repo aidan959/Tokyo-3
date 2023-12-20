@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnwrl7s3uf6r6"
-path.s3tc="res://.godot/imported/cityscape_slot2_albedo_bump.png-e3e92473278a029d9622d2f2866d47f3.s3tc.ctex"
+uid="uid://cov7ofvke4ms"
+path.s3tc="res://.godot/imported/cityscape_slot1_albedo_bump.png-45f2c578c4ad0c732947cc0dca93deec.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://cityscape_slot2_albedo_bump.png"
-dest_files=["res://.godot/imported/cityscape_slot2_albedo_bump.png-e3e92473278a029d9622d2f2866d47f3.s3tc.ctex"]
+source_file="res://textures/cityscape_slot1_albedo_bump.png"
+dest_files=["res://.godot/imported/cityscape_slot1_albedo_bump.png-45f2c578c4ad0c732947cc0dca93deec.s3tc.ctex"]
 
 [params]
 

@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="EvangelionCity"
-run/main_scene="res://evangelion_city.tscn"
+run/main_scene="res://Scenes/evangelion_city.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
-BgCicadasNoise="*res://bg_cicadas_noise.tscn"
+BgCicadasNoise="*res://Scenes/bg_cicadas_noise.tscn"
 
 [editor_plugins]
 
