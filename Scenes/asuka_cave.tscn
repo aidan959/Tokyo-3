@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://b47ymdf5ygmbi"]
 
 [ext_resource type="PackedScene" uid="uid://cdxmd31aw5jvr" path="res://models/Asuka Cave.glb" id="1_cfv1b"]
-[ext_resource type="Script" path="res://StartReiAnimation.gd" id="2_jvt5w"]
-[ext_resource type="PackedScene" uid="uid://xqrocd2672kd" path="res://bubble.tscn" id="3_n40rl"]
-[ext_resource type="Shader" path="res://bubble.gdshader" id="3_upbhl"]
+[ext_resource type="Script" path="res://scripts/StartReiAnimation.gd" id="2_jvt5w"]
+[ext_resource type="PackedScene" uid="uid://xqrocd2672kd" path="res://Scenes/bubble.tscn" id="3_n40rl"]
+[ext_resource type="Shader" path="res://Scenes/bubble.gdshader" id="3_upbhl"]
 [ext_resource type="Texture2D" uid="uid://dtcfy5j16hkkl" path="res://textures/render-taj-plasma.jpg" id="4_0ro6u"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pofx7"]

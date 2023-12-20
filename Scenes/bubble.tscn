@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://xqrocd2672kd"]
 
-[ext_resource type="Shader" path="res://bubble.gdshader" id="1_0b2d7"]
+[ext_resource type="Shader" path="res://Scenes/bubble.gdshader" id="1_0b2d7"]
 [ext_resource type="Texture2D" uid="uid://dtcfy5j16hkkl" path="res://textures/render-taj-plasma.jpg" id="2_hh0ye"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h6swv"]
