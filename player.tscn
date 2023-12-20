@@ -7,7 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_8is3b"]
 size = Vector3(0.7, 1.8, 0.7)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_gq2n1")
 camera_sens = 0.6
 
