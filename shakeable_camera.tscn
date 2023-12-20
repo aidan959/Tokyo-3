@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3v20qyq25bqj"]
+[gd_scene load_steps=4 format=3 uid="uid://7204o58wfpbw"]
 
 [ext_resource type="Script" path="res://shakeable_camera.gd" id="1_aeur6"]
 
