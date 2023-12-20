@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://b47ymdf5ygmbi"]
+
+[ext_resource type="PackedScene" uid="uid://cdxmd31aw5jvr" path="res://models/Asuka Cave.glb" id="1_cfv1b"]
+[ext_resource type="Script" path="res://StartReiAnimation.gd" id="2_jvt5w"]
+[ext_resource type="PackedScene" uid="uid://xqrocd2672kd" path="res://bubble.tscn" id="3_n40rl"]
+[ext_resource type="Shader" path="res://bubble.gdshader" id="3_upbhl"]
+[ext_resource type="Texture2D" uid="uid://dtcfy5j16hkkl" path="res://textures/render-taj-plasma.jpg" id="4_0ro6u"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pofx7"]
+lifetime_randomness = 0.81
+direction = Vector3(0, 24.045, 0)
+gravity = Vector3(0, 60.405, 0)
+angular_velocity_max = 3.0
+linear_accel_min = 1.0
+linear_accel_max = 1.0
+angle_min = -23.3
+angle_max = 91.5
+turbulence_enabled = true
+turbulence_noise_strength = 2.84
+turbulence_noise_scale = 0.83
+turbulence_noise_speed_random = 0.01
+turbulence_influence_max = 0.35
+turbulence_initial_displacement_min = 1.0
+turbulence_initial_displacement_max = 1.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.11
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uplrt"]
+frequency = 0.05
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xw3iv"]
+noise = SubResource("FastNoiseLite_uplrt")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i171n"]
+render_priority = 0
+shader = ExtResource("3_upbhl")
+shader_parameter/time_scale = 0.022
+shader_parameter/roughness = 1.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_xw3iv")
+shader_parameter/color = ExtResource("4_0ro6u")
+
+[sub_resource type="SphereMesh" id="SphereMesh_lmvkp"]
+material = SubResource("ShaderMaterial_i171n")
+radius = 0.005
+height = 0.005
+
+[node name="Asuka Cave" instance=ExtResource("1_cfv1b")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.497376, 0.0493798, 0.0133547, -0.0166599, 0.0329506, 0.498635, 0.0483649, -0.496463, 0.034423, 0, -1.0823, 0)
+
+[node name="Object_18" parent="Sketchfab_model/root/GLTF_SceneRootNode/Pelo_7" index="0"]
+visible = false
+
+[node name="AnimationPlayer" parent="." index="11"]
+script = ExtResource("2_jvt5w")
+
+[node name="MeshInstance3D" parent="." index="12" instance=ExtResource("3_n40rl")]
+visible = false
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.4415, 0)
+amount = 14
+visibility_aabb = AABB(-1, -9.29247, -1, 2, 18.5849, 2)
+trail_lifetime = 0.01
+process_material = SubResource("ParticleProcessMaterial_pofx7")
+draw_pass_1 = SubResource("SphereMesh_lmvkp")

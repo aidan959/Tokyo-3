@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://citeacgvh2dfm"]
+
+[ext_resource type="PackedScene" uid="uid://okbhajhj0lqo" path="res://models/staircase.glb" id="1_gjxr6"]
+[ext_resource type="Script" path="res://Escalator.gd" id="2_w6di4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0riqd"]
+size = Vector3(1, 1, 102.45)
+
+[node name="staircase" instance=ExtResource("1_gjxr6")]
+
+[node name="Plane" parent="." index="2"]
+transform = Transform3D(2.112, 0, 0, 0, 1, 0, 0, 0, 1, -1.008, 0.34415, -5.84059)
+
+[node name="Plane_001" parent="." index="4"]
+transform = Transform3D(2.112, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.118789, -5.42073)
+
+[node name="Area3D" type="Area3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599533, 26, -50)
+script = ExtResource("2_w6di4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.88406, -0.467374, 0, 0.467374, 0.88406, 0, -2.62675, 1.67097)
+shape = SubResource("BoxShape3D_0riqd")
