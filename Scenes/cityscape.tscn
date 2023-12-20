@@ -135,6 +135,7 @@ rise_speed = 0.897
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -194.395, 107.956, -245.629)
 mesh = ExtResource("18_xt101")
 skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("23_634s8")
 script = ExtResource("15_s3unh")
 target_height = 107.956
 start_height = 65.351

@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbbcl6h2rgplx"]
+[gd_scene load_steps=20 format=3 uid="uid://dbbcl6h2rgplx"]
 
 [ext_resource type="Shader" path="res://cel_shading/evangelion_city.gdshader" id="1_aqrxo"]
 [ext_resource type="PackedScene" uid="uid://baaxib80h7tga" path="res://Scenes/cityscape.tscn" id="2_fsxpp"]
 [ext_resource type="PackedScene" uid="uid://chcj0ciqnj7ks" path="res://Scenes/player.tscn" id="3_fswno"]
+[ext_resource type="PackedScene" uid="uid://bbrswdpm5qr5m" path="res://Scenes/rei.tscn" id="4_v6mkn"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_dlk7w"]
 seed = -25
@@ -143,3 +144,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363922, 0, 0.331726)
 
 [node name="Player" parent="." instance=ExtResource("3_fswno")]
 transform = Transform3D(0.717336, 0, -0.696727, 0, 1, 0, 0.696727, 0, 0.717336, 167.951, 101.349, 143.01)
+
+[node name="Node3D" parent="." instance=ExtResource("4_v6mkn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.016, 151.203, -53.0121)

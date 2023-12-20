@@ -1,10 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://b47ymdf5ygmbi"]
+[gd_scene load_steps=16 format=3 uid="uid://b47ymdf5ygmbi"]
 
 [ext_resource type="PackedScene" uid="uid://cdxmd31aw5jvr" path="res://models/Asuka Cave.glb" id="1_cfv1b"]
 [ext_resource type="Script" path="res://scripts/StartReiAnimation.gd" id="2_jvt5w"]
 [ext_resource type="PackedScene" uid="uid://xqrocd2672kd" path="res://Scenes/bubble.tscn" id="3_n40rl"]
 [ext_resource type="Shader" path="res://Scenes/bubble.gdshader" id="3_upbhl"]
-[ext_resource type="Texture2D" uid="uid://dtcfy5j16hkkl" path="res://textures/render-taj-plasma.jpg" id="4_0ro6u"]
+[ext_resource type="Texture2D" uid="uid://be765oleglr43" path="res://textures/render-taj-plasma.jpg" id="4_0ro6u"]
+[ext_resource type="AudioStream" uid="uid://d1kxfbn4xmihs" path="res://audio/bubbles_1.wav" id="6_b5snh"]
+[ext_resource type="Script" path="res://scripts/BubbleLooper.gd" id="7_whls7"]
+[ext_resource type="AudioStream" uid="uid://rj872fuf208q" path="res://audio/machine_hum_3.wav" id="8_trh87"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pofx7"]
 lifetime_randomness = 0.81
@@ -45,6 +48,12 @@ material = SubResource("ShaderMaterial_i171n")
 radius = 0.005
 height = 0.005
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d23n0"]
+radius = 58.6913
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_01k12"]
+size = Vector3(20.8948, 0.0932717, 23.0707)
+
 [node name="Asuka Cave" instance=ExtResource("1_cfv1b")]
 
 [node name="Sketchfab_model" parent="." index="0"]
@@ -52,6 +61,9 @@ transform = Transform3D(0.497376, 0.0493798, 0.0133547, -0.0166599, 0.0329506, 0
 
 [node name="Object_18" parent="Sketchfab_model/root/GLTF_SceneRootNode/Pelo_7" index="0"]
 visible = false
+
+[node name="Cylinder_004" parent="." index="5"]
+transform = Transform3D(1.01, 0, 0, 0, 1.64432, 0, 0, 0, 1.01, 0.0663795, -4.21957, 0.0479617)
 
 [node name="AnimationPlayer" parent="." index="11"]
 script = ExtResource("2_jvt5w")
@@ -66,3 +78,38 @@ visibility_aabb = AABB(-1, -9.29247, -1, 2, 18.5849, 2)
 trail_lifetime = 0.01
 process_material = SubResource("ParticleProcessMaterial_pofx7")
 draw_pass_1 = SubResource("SphereMesh_lmvkp")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.44447, 0)
+stream = ExtResource("6_b5snh")
+autoplay = true
+max_distance = 48.96
+script = ExtResource("7_whls7")
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="." index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.44447, 0)
+stream = ExtResource("8_trh87")
+unit_size = 9.22
+autoplay = true
+max_distance = 217.5
+doppler_tracking = 2
+script = ExtResource("7_whls7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.93418, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0426254, -0.381156, 1.38562)
+shape = SubResource("CylinderShape3D_d23n0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.99287, 6.13843, 66.5921)
+shape = SubResource("BoxShape3D_01k12")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.898279, 0.0373764, 67.3571)
+shape = SubResource("BoxShape3D_01k12")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.65094, 5.78527, 66.7502)
+shape = SubResource("BoxShape3D_01k12")

@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbrswdpm5qr5m"]
 
-[ext_resource type="PackedScene" uid="uid://b47ymdf5ygmbi" path="res://asuka_cave.tscn" id="2_2vpl2"]
-[ext_resource type="PackedScene" uid="uid://okbhajhj0lqo" path="res://models/staircase.glb" id="2_a3yhe"]
+[ext_resource type="PackedScene" uid="uid://b47ymdf5ygmbi" path="res://Scenes/asuka_cave.tscn" id="2_2vpl2"]
+[ext_resource type="PackedScene" uid="uid://citeacgvh2dfm" path="res://Scenes/staircase.tscn" id="2_5jibh"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -67.4726)
 
-[node name="staircase" parent="." instance=ExtResource("2_a3yhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.925, -50.971, 154.68)
-
 [node name="Asuka Cave" parent="." instance=ExtResource("2_2vpl2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89905, 0, -17.3033)
+
+[node name="staircase2" parent="." instance=ExtResource("2_5jibh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.925, -51.652, 154.68)

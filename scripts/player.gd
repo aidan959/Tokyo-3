@@ -1,10 +1,10 @@
 class_name Player extends CharacterBody3D
 
 @export_category("Player")
-@export_range(1, 35, 1) var speed: float = 3 # m/s
-@export_range(10, 400, 1) var acceleration: float = 35 # m/s^2
+@export_range(1, 35, 1) var speed: float = 10 
+@export_range(10, 400, 1) var acceleration: float = 35.0
 
-@export_range(0.1, 3.0, 0.1) var jump_height: float = 1 # m
+@export_range(0.1, 3.0, 0.1) var jump_height: float = 1
 @export_range(0.1, 3.0, 0.1, "or_greater") var camera_sens: float = 1
 
 var jumping: bool = false
@@ -19,7 +19,6 @@ var walk_vel: Vector3
 var grav_vel: Vector3
 var jump_vel: Vector3
 
-#@onready var camera: Camera3D = $Camera
 @onready var camera := $shakeable_camera as Area3D
 
 func _ready() -> void:

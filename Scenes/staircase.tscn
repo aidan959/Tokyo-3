@@ -1,23 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://citeacgvh2dfm"]
+[gd_scene load_steps=9 format=3 uid="uid://citeacgvh2dfm"]
 
 [ext_resource type="PackedScene" uid="uid://okbhajhj0lqo" path="res://models/staircase.glb" id="1_gjxr6"]
-[ext_resource type="Script" path="res://Escalator.gd" id="2_w6di4"]
+[ext_resource type="Script" path="res://Scenes/EscalatorAnimation.gd" id="2_n7ey0"]
+[ext_resource type="Script" path="res://scripts/Escalator.gd" id="2_w6di4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0riqd"]
 size = Vector3(1, 1, 102.45)
 
+[sub_resource type="Curve3D" id="Curve3D_d7i3b"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.41, -24.93, 44.97, 0, 0, 0, 0, 0, 0, -0.41, 21.94, -43.405),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5lkjb"]
+size = Vector3(9.89012, 0.236227, 103.158)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t1e25"]
+size = Vector3(9.89012, 0.236227, 14.6645)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_re0hr"]
+size = Vector3(2.39647, 0.236227, 99.5453)
+
 [node name="staircase" instance=ExtResource("1_gjxr6")]
 
 [node name="Plane" parent="." index="2"]
-transform = Transform3D(2.112, 0, 0, 0, 1, 0, 0, 0, 1, -1.008, 0.34415, -5.84059)
+transform = Transform3D(2.112, 0, 0, 0, 1, 0, 0, 0, 1, -1.008, 0.11589, -5.41481)
 
 [node name="Plane_001" parent="." index="4"]
-transform = Transform3D(2.112, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.118789, -5.42073)
+transform = Transform3D(2.112, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.34566, -5.84339)
+
+[node name="AnimationPlayer" parent="." index="7"]
+script = ExtResource("2_n7ey0")
 
 [node name="Area3D" type="Area3D" parent="." index="8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599533, 26, -50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.648964, 26, -49.9342)
+collision_layer = 3
+collision_mask = 3
+wind_force_magnitude = 11.775
+wind_attenuation_factor = 1.835
+wind_source_path = NodePath("Path3D")
 script = ExtResource("2_w6di4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.88406, -0.467374, 0, 0.467374, 0.88406, 0, -2.62675, 1.67097)
+transform = Transform3D(1, 0, 0, 0, 0.88406, -0.467374, 0, 0.467374, 0.88406, -0.409943, -2.41807, 1.67097)
 shape = SubResource("BoxShape3D_0riqd")
+
+[node name="Path3D" type="Path3D" parent="Area3D" index="1"]
+curve = SubResource("Curve3D_d7i3b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.882127, -0.471012, 0, 0.471012, 0.882127, 7.62939e-06, 21.9594, -48.6207)
+shape = SubResource("BoxShape3D_5lkjb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.000680089, -0.534715)
+shape = SubResource("BoxShape3D_t1e25")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 0.882127, -3.8559e-08, -0.471012, 0.471012, -2.05886e-08, 0.882127, -0.0020709, 23.4636, -49.155)
+shape = SubResource("BoxShape3D_re0hr")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(-4.37114e-08, -1, 0, 0.882127, -3.8559e-08, -0.471012, 0.471012, -2.05886e-08, 0.882127, -1.90945, 23.4636, -49.155)
+shape = SubResource("BoxShape3D_re0hr")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" index="4"]
+transform = Transform3D(-4.37114e-08, -1, 0, 0.882127, -3.8559e-08, -0.471012, 0.471012, -2.05886e-08, 0.882127, 1.85055, 23.4636, -49.155)
+shape = SubResource("BoxShape3D_re0hr")
