@@ -1,6 +1,6 @@
 extends Node3D
 @export_range(-150.0,200.0) var target_height : float = position.y  # The height you want the building to rise to
-@export_range(-150.0,200.0) var start_height : float = position.y  # The height you want the building to rise to
+@export_range(-200.0,200.0) var start_height : float = position.y  # The height you want the building to rise to
 
 @export_range(0.5,5.0) var rise_speed: float = 1.0  # The speed at which the building will rise
 
