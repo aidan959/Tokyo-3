@@ -13,7 +13,7 @@ noise = SubResource("FastNoiseLite_h6swv")
 render_priority = 0
 shader = ExtResource("1_0b2d7")
 shader_parameter/time_scale = 0.039
-shader_parameter/roughness = 0.071
+shader_parameter/roughness = 0.27
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_p88f6")
 shader_parameter/color = ExtResource("2_hh0ye")
 
