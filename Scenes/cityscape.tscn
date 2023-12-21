@@ -2932,6 +2932,15 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 372.13
 [node name="BhopTile79" parent="Node3D" instance=ExtResource("31_gnagv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 351.136, 74.7587, 598.69)
 
+[node name="BhopTile113" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 340.452, 74.7587, 605.32)
+
+[node name="BhopTile114" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 347.74, 74.7587, 613.781)
+
+[node name="BhopTile115" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 355.83, 74.7587, 613.781)
+
 [node name="BhopTile80" parent="Node3D" instance=ExtResource("31_gnagv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 347.136, 74.7587, 620.69)
 
@@ -2951,7 +2960,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 392.13
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 367.136, 74.7587, 604.69)
 
 [node name="BhopTile88" parent="Node3D" instance=ExtResource("31_gnagv")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 367.136, 70.59, 616.69)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 367.136, 74.7623, 616.69)
 
 [node name="BhopTile89" parent="Node3D" instance=ExtResource("31_gnagv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 375.136, 74.7587, 624.69)

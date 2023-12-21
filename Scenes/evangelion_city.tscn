@@ -145,13 +145,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363922, 0, 0.331726)
 [node name="Player" parent="." instance=ExtResource("3_fswno")]
 transform = Transform3D(0.717336, 0, -0.696727, 0, 1, 0, 0.696727, 0, 0.717336, 183.951, 101.349, 139.01)
 speed = 10.0
-acceleration = 35.0
+acceleration = 39.0
 air_acceleration = 100.0
 floor_friction = 0.9
 floor_speed_limit = 3.0
 air_speed_limit = 0.6
 jump_impulse = 4.0
-camera_sens = 0.1
+camera_sens = 0.8
 
 [node name="Node3D" parent="." instance=ExtResource("4_v6mkn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.016, 151.865, -53.0121)
+transform = Transform3D(-0.999827, 0, -0.0185866, 0, 1, 0, 0.0185866, 0, -0.999827, 410.973, 126.427, 803.899)
