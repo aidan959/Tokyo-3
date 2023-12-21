@@ -87,13 +87,13 @@ In the hit anime Evangelion, there is a futiristic city shown which sinks into t
 ![image](images/Escalator.png)
 
 ## Escalator Recreation:
-![image](Our-Escalator.png)
+![image](images/Our-Escalator.png)
 
 ## Tube scene from Evangelion:
-![image](Rei-Tube.png)
+![image](images/Rei-Tube.png)
 
 ## Recreation:
-![image](Our-Rei-Tube.png)
+![image](images/Our-Rei-Tube.png)
 
 ## Here is a video of the project:
 
