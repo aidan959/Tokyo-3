@@ -53,6 +53,7 @@ The button emits a signal which begins the animation. The player movement is the
 * https://www.theseus.fi/bitstream/handle/10024/507593/Peltola_Mikko.pdf?sequence=2&isAllowed=y#:~:text=In%20it's%20most%20common%20form,into%20the%20held%20strafe%20direction.
 * https://www.youtube.com/watch?v=7L6ZUYj1hs8
 * https://github.com/Zylann/godot_heightmap_plugin
+* https://www.youtube.com/watch?v=1i5SB8Ct1y0&t=244s
 
 
 # What I am most proud of in the assignment
@@ -60,7 +61,7 @@ The button emits a signal which begins the animation. The player movement is the
 Learned many new techniques in 3D modelling and how to do basic animation in Godot.
 
 ### Matthew
-The level design of the city
+The level design of the city and the offset of each tower/towerblock to achieve a strong effect when the city rises from the ground.
 
 # What I learned
 ### Aidan
@@ -72,7 +73,12 @@ Working with audio and particle systems in Godot.
 Level design principles and info regarding normals and mesh optimization (reducing draw calls by combining models)
 ### Matthew
 Expanded my knowledge of Godot and the features it provides.
-Layering of scenes and 
+Layering of scenes.
+How to apply shaders to objects.
+Using signals to achieve synchronised script execution.
+Aspects of level design and layout.
+How to have Area3D nodes affect the playermodel/camera.
+
 # Proposal submitted earlier can go here:
 In the hit anime Evangelion, there is a futiristic city shown which sinks into the ground when in danger. This type of futurism is intriguing and we sought to recreate the environment and vibe for our project. We want players to truly experience how  this life could be. https://www.reddit.com/r/NeonGenesisEvangelion/comments/q7erof/this_is_tokyo3_this_is_our_city_and_its_the_city/ here attached
 
