@@ -7,8 +7,7 @@ Student Number: C20394933 & C20381946
 Class Group: TU856/4
 
 Video: 
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
+[![YouTube](images/Our-Tokyo3.png)](https://youtu.be/VgjHtrhDxOo)
 
 # Description of the project
 In the hit anime Evangelion, there is a futiristic city shown which sinks into the ground when in danger. This type of futurism is intriguing and we sought to recreate the environment and vibe for our project. We want players to truly experience how  this life could be. https://www.reddit.com/r/NeonGenesisEvangelion/comments/q7erof/this_is_tokyo3_this_is_our_city_and_its_the_city/ here attached
@@ -100,8 +99,3 @@ In the hit anime Evangelion, there is a futiristic city shown which sinks into t
 
 ## Recreation:
 ![image](images/Our-Rei-Tube.png)
-
-## Here is a video of the project:
-
-[![YouTube](images/Our-Tokyo3.png)](https://youtu.be/VgjHtrhDxOo)
-
