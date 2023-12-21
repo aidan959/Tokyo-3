@@ -1,10 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://dkeb80kcvnak2"]
+[gd_scene load_steps=21 format=3 uid="uid://dkeb80kcvnak2"]
 
 [ext_resource type="Script" path="res://scripts/ButtonPress.gd" id="1_fdy63"]
 [ext_resource type="AudioStream" uid="uid://f1i2yvks4gm6" path="res://audio/button_click.wav" id="2_ipxxj"]
+[ext_resource type="Shader" path="res://cel_shading/outline.gdshader" id="2_xqbr7"]
+[ext_resource type="PackedScene" uid="uid://h5jdxtgbbjk6" path="res://models/red_button_pillar.glb" id="3_jesox"]
+[ext_resource type="PackedScene" uid="uid://dhlk8iivkyio3" path="res://Scenes/red_button_pillar.tscn" id="5_wqee2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ri66p"]
+render_priority = 0
+shader = ExtResource("2_xqbr7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fw105"]
 resource_name = "Material.003"
+next_pass = SubResource("ShaderMaterial_ri66p")
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.818181, 0.818181, 0.818181, 1)
@@ -83,8 +91,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mqa76")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7xiev"]
+render_priority = 0
+shader = ExtResource("2_xqbr7")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nuib"]
 resource_name = "Material.001"
+next_pass = SubResource("ShaderMaterial_7xiev")
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.906565, 0, 0.071236, 1)
@@ -198,3 +211,7 @@ shape = SubResource("BoxShape3D_h68of")
 transform = Transform3D(1, 0, 0, 0, 0.110133, -0.993917, 0, 0.993917, 0.110133, 0, 0, 0)
 stream = ExtResource("2_ipxxj")
 emission_angle_enabled = true
+
+[node name="red_button_pillar" parent="." instance=ExtResource("3_jesox")]
+
+[node name="red_button_pillar2" parent="." instance=ExtResource("5_wqee2")]

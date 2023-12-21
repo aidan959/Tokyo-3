@@ -129,7 +129,7 @@ environment = SubResource("Environment_qfelq")
 camera_attributes = SubResource("CameraAttributesPhysical_0c0xr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.500173, -0.204374, 0.841462, 0.104552, 0.978893, 0.175606, -0.859591, 0.000143119, 0.510983, 0, 158.905, 0)
+transform = Transform3D(0.500173, -0.204374, 0.841462, 0.104552, 0.978893, 0.175606, -0.859591, 0.000142985, 0.510983, 0, 158.905, 0)
 light_color = Color(0.694118, 0.364706, 0.0392157, 1)
 light_energy = 1.985
 light_indirect_energy = 0.786
@@ -146,4 +146,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363922, 0, 0.331726)
 transform = Transform3D(0.717336, 0, -0.696727, 0, 1, 0, 0.696727, 0, 0.717336, 167.951, 101.349, 143.01)
 
 [node name="Node3D" parent="." instance=ExtResource("4_v6mkn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.016, 151.203, -53.0121)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.016, 151.865, -53.0121)

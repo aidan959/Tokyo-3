@@ -27,10 +27,10 @@ size = Vector3(2.39647, 0.236227, 99.5453)
 [node name="staircase" instance=ExtResource("1_gjxr6")]
 
 [node name="Plane" parent="." index="2"]
-transform = Transform3D(2.112, 0, 0, 0, 1, 0, 0, 0, 1, -1.008, 0.11589, -5.41481)
+transform = Transform3D(2.112, 0, 0, 0, 1, 0, 0, 0, 1, -1.008, 0.304823, -5.76723)
 
 [node name="Plane_001" parent="." index="4"]
-transform = Transform3D(2.112, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.34566, -5.84339)
+transform = Transform3D(2.112, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.167223, -5.51043)
 
 [node name="AnimationPlayer" parent="." index="7"]
 script = ExtResource("2_n7ey0")
@@ -54,7 +54,7 @@ curve = SubResource("Curve3D_d7i3b")
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="9"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.882127, -0.471012, 0, 0.471012, 0.882127, 7.62939e-06, 21.9594, -48.6207)
+transform = Transform3D(1, 0, 0, 0, 0.882127, -0.471012, 0, 0.471012, 0.882127, 7.62939e-06, 22.9078, -48.6207)
 shape = SubResource("BoxShape3D_5lkjb")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]

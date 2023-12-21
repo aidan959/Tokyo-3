@@ -9,7 +9,6 @@ resource_name = "Materiais.010"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_45fn1")
-roughness = 0.821115
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_a8s38"]
 _surfaces = [{
@@ -46,6 +45,7 @@ resource_name = "Materiais.011"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("2_hohpl")
+metallic_specular = 0.0
 roughness = 0.178885
 normal_enabled = true
 normal_texture = ExtResource("3_rb70t")

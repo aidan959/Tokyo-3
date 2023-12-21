@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cke6nf55pjv2k"]
+
+[ext_resource type="Shader" path="res://cel_shading/outline2.gdshader" id="1_52e21"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vj75x"]
+size = Vector3(3, 0.05, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tqsdg"]
+size = Vector3(3, 0.05, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0c44p"]
+render_priority = 0
+shader = ExtResource("1_52e21")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cigfw"]
+next_pass = SubResource("ShaderMaterial_0c44p")
+metallic_specular = 1.0
+
+[node name="BhopTile" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.386, 90.3495, 188.201)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_vj75x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00584412, 0, -0.00585938)
+mesh = SubResource("BoxMesh_tqsdg")
+surface_material_override/0 = SubResource("StandardMaterial3D_cigfw")
