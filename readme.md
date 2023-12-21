@@ -84,16 +84,16 @@ In the hit anime Evangelion, there is a futiristic city shown which sinks into t
 ![Our Tokyo-3](images/Our-Tokyo3.png)
 
 ## A shot of the escalator from Evangelion:
-![image]()
+![image](images/Escalator.png)
 
 ## Escalator Recreation:
-![image]()
+![image](Our-Escalator.png)
 
 ## Tube scene from Evangelion:
-![image]()
+![image](Rei-Tube.png)
 
 ## Recreation:
-![image]()
+![image](Our-Rei-Tube.png)
 
 ## Here is a video of the project:
 
