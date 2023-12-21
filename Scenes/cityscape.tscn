@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://baaxib80h7tga"]
+[gd_scene load_steps=34 format=3 uid="uid://baaxib80h7tga"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_bf2dd"]
 [ext_resource type="Resource" path="res://evangelion_terrain/data.hterrain" id="2_6gpmj"]
@@ -37,6 +37,9 @@ script = ExtResource("3_bkpw7")
 mode = 0
 textures = [[ExtResource("4_2csad"), ExtResource("5_lg23n"), ExtResource("6_i7wrq")], [ExtResource("7_h20s7"), ExtResource("8_cxf78"), ExtResource("9_2nqik")]]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ocr32"]
+size = Vector3(12.7806, 50.4446, 22.5267)
+
 [node name="city" type="Node3D"]
 
 [node name="HTerrain" type="Node3D" parent="."]
@@ -60,7 +63,7 @@ shader_params/u_tile_reduction = Vector4(0, 0, 0, 0)
 shader_params/u_specular = 0.0
 
 [node name="MisatoCar" parent="." instance=ExtResource("10_pvekg")]
-transform = Transform3D(0.0874679, 0, 0.0484702, 0, 0.1, 0, -0.0484702, 0, 0.0874679, 180.961, 99.7653, 142.492)
+transform = Transform3D(0.0874679, 0, 0.0484702, 0, 0.1, 0, -0.0484702, 0, 0.0874679, 182.098, 99.7653, 141.486)
 
 [node name="Water" parent="." instance=ExtResource("12_5cogs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.367, 28.1926, 543.325)
@@ -2035,11 +2038,11 @@ skeleton = NodePath("../../../..")
 surface_material_override/0 = ExtResource("23_634s8")
 
 [node name="middle-filler-5" type="Node3D" parent="buildings"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.585, -106.946, 394.88)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.585, -33.93, 394.88)
 script = ExtResource("15_s3unh")
 target_height = -33.93
 start_height = -106.946
-rise_speed = 4.44
+rise_speed = 5.0
 
 [node name="front-facing3" type="Node3D" parent="buildings/middle-filler-5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 448.424, -69.903, 578.903)
@@ -2130,6 +2133,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9947, -3.09751, -0.225037)
 mesh = ExtResource("22_13m0d")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = ExtResource("23_634s8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="buildings/middle-filler-5/bignsmall6/ResidentialBuildings013"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="buildings/middle-filler-5/bignsmall6/ResidentialBuildings013/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00455, 37.8672, -0.586853)
+shape = SubResource("BoxShape3D_ocr32")
 
 [node name="random" type="Node3D" parent="buildings"]
 
@@ -2417,6 +2426,15 @@ transform = Transform3D(-0.75, 0, 1.29904, 0, 1.5, 0, -1.29904, 0, -0.75, 207.85
 [node name="fence65" parent="Fences" instance=ExtResource("29_6ghu5")]
 transform = Transform3D(-0.75, 0, 1.29904, 0, 1.5, 0, -1.29904, 0, -0.75, 208.902, 100.444, 129.859)
 
+[node name="fence66" parent="Fences" instance=ExtResource("29_6ghu5")]
+transform = Transform3D(-0.75, 0, 1.29904, 0, 1.5, 0, -1.29904, 0, -0.75, 180.096, 100.444, 140.748)
+
+[node name="fence67" parent="Fences" instance=ExtResource("29_6ghu5")]
+transform = Transform3D(-0.75, 0, 1.29904, 0, 1.5, 0, -1.29904, 0, -0.75, 181.146, 100.444, 142.566)
+
+[node name="fence68" parent="Fences" instance=ExtResource("29_6ghu5")]
+transform = Transform3D(-0.75, 0, 1.29904, 0, 1.5, 0, -1.29904, 0, -0.75, 182.196, 100.444, 144.385)
+
 [node name="stairs" parent="." instance=ExtResource("31_opn4h")]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 206.404, 99.3251, 130.738)
 
@@ -2604,19 +2622,342 @@ transform = Transform3D(1.4623, 0, 1.4623, 0, 2.068, 0, -1.4623, 0, 1.4623, 214.
 [node name="Road29" parent="tunnels/tunnel3/roads" instance=ExtResource("11_7li3j")]
 transform = Transform3D(1.4623, 0, 1.4623, 0, 2.068, 0, -1.4623, 0, 1.4623, 208.783, 99.342, 102.614)
 
-[node name="BhopTile" parent="." instance=ExtResource("31_gnagv")]
+[node name="Node3D" type="Node3D" parent="."]
 
-[node name="BhopTile2" parent="." instance=ExtResource("31_gnagv")]
+[node name="BhopTile" parent="Node3D" instance=ExtResource("31_gnagv")]
+
+[node name="BhopTile2" parent="Node3D" instance=ExtResource("31_gnagv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.386, 90.3495, 195.201)
 
-[node name="BhopTile3" parent="." instance=ExtResource("31_gnagv")]
+[node name="BhopTile3" parent="Node3D" instance=ExtResource("31_gnagv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.386, 90.3495, 202.201)
 
-[node name="BhopTile4" parent="." instance=ExtResource("31_gnagv")]
+[node name="BhopTile4" parent="Node3D" instance=ExtResource("31_gnagv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.386, 90.3495, 210.201)
 
-[node name="BhopTile5" parent="." instance=ExtResource("31_gnagv")]
+[node name="BhopTile5" parent="Node3D" instance=ExtResource("31_gnagv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.386, 90.3495, 206.201)
+
+[node name="BhopTile6" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.386, 90.3495, 211.201)
+
+[node name="BhopTile7" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.386, 90.3495, 218.201)
+
+[node name="BhopTile8" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.386, 90.3495, 225.201)
+
+[node name="BhopTile9" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.386, 90.3495, 233.201)
+
+[node name="BhopTile10" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.386, 90.3495, 229.201)
+
+[node name="BhopTile11" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.386, 90.3495, 233.201)
+
+[node name="BhopTile12" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.386, 90.3495, 265.201)
+
+[node name="BhopTile13" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.386, 90.3495, 243.201)
+
+[node name="BhopTile14" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.386, 90.3495, 255.201)
+
+[node name="BhopTile15" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.386, 90.3495, 247.201)
+
+[node name="BhopTile16" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.386, 90.3495, 297.201)
+
+[node name="BhopTile17" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.386, 90.3495, 285.201)
+
+[node name="BhopTile19" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.247, 90.3495, 330.116)
+
+[node name="BhopTile83" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.386, 90.3495, 324.201)
+
+[node name="BhopTile90" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.386, 90.3495, 306.201)
+
+[node name="BhopTile84" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.386, 90.3495, 340.201)
+
+[node name="BhopTile91" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.642, 90.3495, 337.421)
+
+[node name="BhopTile20" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.386, 90.3495, 315.201)
+
+[node name="BhopTile21" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.386, 90.3495, 360.201)
+
+[node name="BhopTile22" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.386, 90.3495, 348.201)
+
+[node name="BhopTile18" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.386, 90.3495, 275.201)
+
+[node name="BhopTile23" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.386, 90.3495, 352.201)
+
+[node name="BhopTile24" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188.386, 90.3495, 355.201)
+
+[node name="BhopTile25" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188.386, 90.3495, 362.201)
+
+[node name="BhopTile26" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188.386, 90.3495, 370.201)
+
+[node name="BhopTile27" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.386, 90.3495, 366.201)
+
+[node name="BhopTile92" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 197.386, 90.3495, 372.201)
+
+[node name="BhopTile28" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.386, 90.3495, 371.201)
+
+[node name="BhopTile29" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.386, 90.3495, 378.201)
+
+[node name="BhopTile30" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.386, 90.3495, 385.201)
+
+[node name="BhopTile31" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.386, 90.3495, 393.201)
+
+[node name="BhopTile32" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.386, 90.3495, 389.201)
+
+[node name="BhopTile33" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 197.386, 90.3495, 396.201)
+
+[node name="BhopTile34" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.386, 90.3495, 420.201)
+
+[node name="BhopTile35" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 197.386, 90.3495, 402.201)
+
+[node name="BhopTile36" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.386, 90.3495, 413.201)
+
+[node name="BhopTile37" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 201.386, 90.3495, 407.201)
+
+[node name="BhopTile38" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.386, 90.3495, 453.201)
+
+[node name="BhopTile95" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.386, 90.3495, 460.201)
+
+[node name="BhopTile96" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.386, 90.3495, 471.201)
+
+[node name="BhopTile39" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.386, 90.3495, 445.201)
+
+[node name="BhopTile93" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.386, 90.3495, 432.201)
+
+[node name="BhopTile94" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 197.386, 90.3495, 439.201)
+
+[node name="BhopTile40" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.386, 90.3495, 485.201)
+
+[node name="BhopTile41" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.386, 90.3495, 478.201)
+
+[node name="BhopTile42" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 205.386, 90.3495, 520.201)
+
+[node name="BhopTile43" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.386, 90.3495, 505.201)
+
+[node name="BhopTile99" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.386, 90.3495, 508.201)
+
+[node name="BhopTile100" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.386, 90.3495, 508.201)
+
+[node name="BhopTile44" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200.386, 90.3495, 426.201)
+
+[node name="BhopTile45" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.386, 90.3495, 500.201)
+
+[node name="BhopTile97" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.386, 90.3495, 491.201)
+
+[node name="BhopTile98" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 185.386, 90.3495, 495.201)
+
+[node name="BhopTile47" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211.386, 90.3495, 534.201)
+
+[node name="BhopTile48" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.386, 90.3495, 527.201)
+
+[node name="BhopTile101" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.386, 90.3495, 540.201)
+
+[node name="BhopTile102" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.386, 90.3495, 554.201)
+
+[node name="BhopTile49" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.386, 90.3495, 514.201)
+
+[node name="BhopTile50" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.386, 77.3495, 560.201)
+
+[node name="BhopTile51" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.386, 77.3495, 548.201)
+
+[node name="BhopTile52" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.386, 77.3495, 590.201)
+
+[node name="BhopTile53" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.386, 77.3495, 578.201)
+
+[node name="BhopTile54" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.386, 77.3495, 570.201)
+
+[node name="BhopTile103" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.386, 77.3495, 565.201)
+
+[node name="BhopTile55" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.386, 77.3495, 604.201)
+
+[node name="BhopTile56" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.386, 77.3495, 592.201)
+
+[node name="BhopTile57" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 223.386, 77.3495, 584.201)
+
+[node name="BhopTile104" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.386, 77.3495, 598.201)
+
+[node name="BhopTile105" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225.386, 77.3495, 590.201)
+
+[node name="BhopTile106" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 237.386, 77.3495, 601.201)
+
+[node name="BhopTile107" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 248.386, 77.3495, 609.201)
+
+[node name="BhopTile108" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 260.386, 77.3495, 607.201)
+
+[node name="BhopTile109" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 267.386, 77.3495, 607.201)
+
+[node name="BhopTile110" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 273.386, 77.3495, 599.201)
+
+[node name="BhopTile111" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284.386, 77.3495, 599.201)
+
+[node name="BhopTile58" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 254.511, 77.3495, 604.826)
+
+[node name="BhopTile59" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 242.511, 77.3495, 604.826)
+
+[node name="BhopTile60" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 292.511, 77.3495, 603.826)
+
+[node name="BhopTile112" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 299.628, 77.3495, 604.826)
+
+[node name="BhopTile61" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 272.511, 77.3495, 604.826)
+
+[node name="BhopTile62" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 264.511, 77.3495, 612.826)
+
+[node name="BhopTile63" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 298.511, 77.3495, 587.826)
+
+[node name="BhopTile64" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 286.511, 77.3495, 587.826)
+
+[node name="BhopTile65" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 278.511, 77.3495, 595.826)
+
+[node name="BhopTile66" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 344.011, 77.3495, 591.919)
+
+[node name="BhopTile67" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 360.011, 77.3495, 594.076)
+
+[node name="BhopTile68" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 318.011, 77.3495, 594.076)
+
+[node name="BhopTile69" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 330.011, 77.3495, 594.076)
+
+[node name="BhopTile70" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 338.011, 77.3495, 586.076)
+
+[node name="BhopTile71" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 306.011, 77.3495, 611.076)
+
+[node name="BhopTile72" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 316.011, 77.3495, 611.076)
+
+[node name="BhopTile73" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 324.011, 77.3495, 603.076)
+
+[node name="BhopTile74" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 364.136, 74.7587, 652.69)
+
+[node name="BhopTile75" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 364.136, 74.7587, 664.69)
+
+[node name="BhopTile76" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 364.136, 74.7587, 622.69)
+
+[node name="BhopTile77" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 364.136, 74.7587, 634.69)
+
+[node name="BhopTile78" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 372.136, 74.7587, 642.69)
+
+[node name="BhopTile79" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 351.136, 74.7587, 598.69)
+
+[node name="BhopTile80" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 347.136, 74.7587, 620.69)
+
+[node name="BhopTile81" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 355.136, 74.7587, 628.69)
+
+[node name="BhopTile82" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 384.136, 74.7587, 648.69)
+
+[node name="BhopTile85" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 384.136, 74.7587, 630.69)
+
+[node name="BhopTile86" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 392.136, 74.7587, 638.69)
+
+[node name="BhopTile87" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 367.136, 74.7587, 604.69)
+
+[node name="BhopTile88" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 367.136, 70.59, 616.69)
+
+[node name="BhopTile89" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 375.136, 74.7587, 624.69)
+
+[node name="BhopTile46" parent="Node3D" instance=ExtResource("31_gnagv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.386, 90.3495, 465.201)
 
 [connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings003" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/front-facing/ResidentialBuildings004" method="raise_building"]
@@ -2636,7 +2977,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.386, 90.3495, 206.201)
 [connection signal="button_pressed" from="red_button" to="buildings/apartment-block-2/bigger-skyscrapers-group5" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/apartment-block-3" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/big-frontal-tower" method="raise_building"]
+[connection signal="button_pressed" from="red_button" to="buildings/middle-filler-5" method="raise_building"]
 [connection signal="button_pressed" from="red_button" to="buildings/random/ResidentialBuildings006" method="raise_building"]
+[connection signal="button_pressed" from="red_button" to="AudioStreamPlayer3D" method="play"]
 [connection signal="button_pressed" from="red_button" to="Hatches/building_hatch" method="open_hatch"]
 [connection signal="button_pressed" from="red_button" to="Hatches/building_hatch2" method="open_hatch"]
 [connection signal="button_pressed" from="red_button" to="Hatches/building_hatch3" method="open_hatch"]
@@ -2646,4 +2989,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.386, 90.3495, 206.201)
 [connection signal="button_pressed" from="red_button" to="Hatches/building_hatch8" method="open_hatch"]
 [connection signal="button_pressed" from="red_button" to="Hatches/building_hatch9" method="open_hatch"]
 [connection signal="button_pressed" from="red_button" to="Hatches/building_hatch10" method="open_hatch"]
-[connection signal="button_pressed" from="red_button" to="AudioStreamPlayer3D" method="play"]

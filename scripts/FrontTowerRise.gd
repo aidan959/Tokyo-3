@@ -18,7 +18,7 @@ func _process(delta):
 			is_rising = false
 
 func raise_building():
-	is_rising = true
+		is_rising = true
 
 func _on_button_pressed():
 	is_rising = true

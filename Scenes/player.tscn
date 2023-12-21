@@ -11,6 +11,13 @@ size = Vector3(0.7, 1.8, 0.7)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_hh15u")
+speed = null
+acceleration = null
+air_acceleration = null
+floor_friction = null
+floor_speed_limit = null
+air_speed_limit = null
+jump_impulse = null
 camera_sens = 0.6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

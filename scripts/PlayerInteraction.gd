@@ -19,12 +19,12 @@ func _process(_delta):
 	elif is_instance_valid(current_collider):
 		current_collider = null
 		set_interaction_text("")
-	pass
 
 func set_interaction_text(text):
-	if !text:
+	if not text:
 		interaction_label.visible = false
-	else:
-		var interact_key = OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode)
-		interaction_label.text = "Press e %s" % [text]
-		interaction_label.visible = true
+		return
+	
+	var interact_key = OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode)
+	interaction_label.text = "Press e %s" % [text]
+	interaction_label.visible = true
