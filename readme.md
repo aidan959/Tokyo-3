@@ -14,12 +14,12 @@ Video:
 In the hit anime Evangelion, there is a futiristic city shown which sinks into the ground when in danger. This type of futurism is intriguing and we sought to recreate the environment and vibe for our project. We want players to truly experience how  this life could be. https://www.reddit.com/r/NeonGenesisEvangelion/comments/q7erof/this_is_tokyo3_this_is_our_city_and_its_the_city/ here attached
 
 # Instructions for use
-WASD <- Movement keys
-SPACE / MOUSEWHEEL UP + DOWN <- Jump
-E <- Interact
-C <- Save point
-V <- Reload to save point
-ESC <- quit
+- WASD <- Movement keys
+- SPACE / MOUSEWHEEL UP + DOWN <- Jump
+- E <- Interact
+- C <- Save point
+- V <- Reload to save point
+- ESC <- quit
 
 # Bunny hopping, or "bhopping"
 This a technique used to increase speed and maneuverability.
@@ -56,64 +56,46 @@ The button emits a signal which begins the animation. The player movement is the
 
 
 # What I am most proud of in the assignment
-Aidan:
+### Aidan:
 Learned many new techniques in 3D modelling and how to do basic animation in Godot.
 
-
+### Matthew
+The level design of the city
 
 # What I learned
-Aidan
+### Aidan
 Learned many features of the godot engine.
 3D modelling techniqes and animation.
 How to write movement code.
 How to utilize signals to run events.
 Working with audio and particle systems in Godot.
 Level design principles and info regarding normals and mesh optimization (reducing draw calls by combining models)
+### Matthew
+Expanded my knowledge of Godot and the features it provides.
+Layering of scenes and 
 # Proposal submitted earlier can go here:
 In the hit anime Evangelion, there is a futiristic city shown which sinks into the ground when in danger. This type of futurism is intriguing and we sought to recreate the environment and vibe for our project. We want players to truly experience how  this life could be. https://www.reddit.com/r/NeonGenesisEvangelion/comments/q7erof/this_is_tokyo3_this_is_our_city_and_its_the_city/ here attached
 
-## This is how to markdown text:
 
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-The shot from Evangelion which inspired this project:
+## The shot from Evangelion which inspired this project:
 ![Tokyo-3](images/Tokyo-3-Rising.png)
 
-This is an image of the same attempted scene:
-
+## This is an image of the same attempted scene:
 ![Our Tokyo-3](images/Our-Tokyo3.png)
 
-Here is a video of the project:
+## A shot of the escalator from Evangelion:
+![image]()
 
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
+## Escalator Recreation:
+![image]()
+
+## Tube scene from Evangelion:
+![image]()
+
+## Recreation:
+![image]()
+
+## Here is a video of the project:
+
+[![YouTube](images/Our-Tokyo3.png)](https://youtu.be/VgjHtrhDxOo)
 
